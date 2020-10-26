@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </meta>
-  <title> CMAP ABM</title>
+  <title> CMAP Trip-Based Model</title>
 
   <link href="css/chordStyles.css" rel="stylesheet">
   </link>
@@ -30,15 +30,15 @@
 <body style="height:100%">
   <div>
     <div>
+      <!-- Header -->
       <div>
-        <!-- Header -->
         <nav class="navbar navbar-default navbar-fixed-top" id="header" style="padding-top:10px; padding-right:10px; padding-bottom:5px; z-index:9999">
           <div class="container-fluid">
             <a class="navbar-brand" href="https://www.cmap.illinois.gov/" target="_blank">
               <img src='data/images/cmap_shortid_margins_RGB-01-01.png' height="30px">
             </a>
-            <h3 class="navbar-text">Activity-Based Model (ABM) Calibration and Validation Report</h3>
-            <p class="navbar-text navbar-right">September 2019 Release </p>
+            <h3 class="navbar-text">Trip-Based Model Validation Report</h3>
+            <p class="navbar-text navbar-right">Under development </p>
           </div>
         </nav>
 
@@ -53,57 +53,11 @@
             </ul>
             <ul class="nav navbar-nav">
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Calibration
-                  <span class="caret"></span>
+                <a href='#2' role="button" data-toggle="tab">
+                  Chart Examples
                 </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="calibration" href="#2" role="tab" data-toggle="tab">
-                      Population Synthesis
-                    </a>
-                  </li>
-                  <li>
-                    <a class="calibration" href="#3" role="tab" data-toggle="tab">
-                      Vehicle Ownership
-                    </a>
-                  </li>
-
-                  <li>
-                      <a class="calibration" href="#10" role="tab" data-toggle="tab">
-                        Tours
-                      </a>
-                    </li>
-
-                  <li>
-                    <a class="calibration" href="#5" role="tab" data-toggle="tab">
-                      Trip Mode
-                    </a>
-                  </li>
-
-                  <li>
-                    <a class="calibration" href="#6" role="tab" data-toggle="tab">
-                      Trip Activities
-                    </a>
-                  </li>
-
-
-
-                  <li>
-                    <a class="calibration" href="#4" role="tab" data-toggle="tab">
-                      Work Flows
-                    </a>
-                  </li>
-
-                  <li>
-                    <a class="calibration" href="#7" role="tab" data-toggle="tab">
-                      Transit Trips
-                    </a>
-                  </li>
-                </ul>
-              </li>
-
-
+            </ul>
+            <ul class="nav navbar-nav">
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   Validation
@@ -112,34 +66,27 @@
                 <ul class="dropdown-menu">
 
                   <li>
-                    <a class="validation" href="#11" role="tab" data-toggle="tab">
+                    <a class="validation" href="#3" role="tab" data-toggle="tab">
                       Household Attributes
                     </a>
                   </li>
                   <li>
-                    <a class="validation" href="#12" role="tab" data-toggle="tab">
+                    <a class="validation" href="#4" role="tab" data-toggle="tab">
                       Commute Trips
                     </a>
                   </li>
                   <li>
-                    <a class="validation" href="#8" role="tab" data-toggle="tab">
+                    <a class="validation" href="#5" role="tab" data-toggle="tab">
                       Highway Assignment
                     </a>
                   </li>
 
                   <li>
-                    <a class="validation" href="#9" role="tab" data-toggle="tab">
+                    <a class="validation" href="#6" role="tab" data-toggle="tab">
                       Transit Assignment
                     </a>
                   </li>
                 </ul>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a id="recall" style="display:none">
-                  About
-                </a>
               </li>
             </ul>
           </div>
@@ -148,45 +95,19 @@
       </div>
 
       <div class="tab-content">
-        <div class="alert alert-info alert" role="alert" id="about">
-          <button type="button" class="close" id="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-          <p style="margin-bottom:10px">
-            <strong>Model calibration</strong> ensures that the various components of the overall model replicate observed data for a base year.  Calibration requires adjusting parameters for individual sub-models to ensure that they each produce realistic results.  Calibration is complete once model results match the observed patterns found in the Census, regional household travel surveys and transit origin-destination surveys.  CMAP's ABM is calibrated to a base year of 2010 because the regional household travel survey data available were collected in 2007-08.
-            <strong>Model validation</strong> is focused on comparing the final results of a calibrated model to other data sources such as daily traffic counts, daily transit boardings, and more recent Census data.  A best practice within travel demand modeling is to use different datasets for model calibration and validation activities to double-check that the results replicate observed travel patterns.  The CMAP ABM is run to reflect travel conditions for the year 2015.  Validation demonstrates that the sub-models calibrated to 2010 conditions are able to represent the conditions in 2015.
-            <em>Data source information for each page can be found in the footer. </em>
-          </p>
-        </div>
-
+        <!-- Intro page -->
         <div id="1" class="tab-pane active container-fluid">
           <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
+            <div class="col-md-1"></div> 
             <div class="col-md-7">
               <h2>Introduction</h2>
-              <p>
-                Activity-based models (ABMs) are founded on the idea that people’s travel behavior is a result of their daily activities; i.e., the things people need to accomplish dictate where, when, and how they travel, and with whom.
-                These models are
-                more advanced than standard travel demand models because they seek to represent the choices made by individual travelers. In order to do this, the models must generate a schedule of daily activities for members of every
-                household in the
-                region, and then transform that information into sequences of trips that occur throughout the day. To accomplish this, ABMs use detailed information about the factors that affect travel decisions, including:</p>
-              <ul>
-                <li>Households – the number of adults, children, and workers; household income; the number of vehicles available</li>
-                <li>People – age; work and school status; occupation</li>
-                <li>Trips – purpose; destination; who is taking the trip; is it part of a sequence of trips that must be completed in a specific order</li>
-              </ul>
-              Having all of this data available for individual travelers allows for a finer level of analysis than standard travel demand models. ABMs were developed as a way to better analyze the impacts of policy decisions like managed lanes, congestion pricing and alternative transit fare structures. For more information, visit
-              <a href="https://www.cmap.illinois.gov/data/transportation/modeling#CMAPs_Activity_Based_Models" target="_blank">CMAP's Activity-Based Models.</a> </p>
-
-              CMAP's ABM platform is CT-RAMP (Coordinated Travel and Regional Activity-Based Modeling Platform), which was developed open source by a consultant under contract to CMAP. Activity-based modeling is increasingly viewed as a superior method to better understand the socioeconomic determinants of travel choice and for evaluating modern transportation solutions. CMAP's ABM has been developed to demonstrate sensitivity to highway pricing scenarios based on each traveler's individual value of time and to improve model sensitivity to a wider range of nontraditional transit attributes, i.e., attributes such as service reliability, personal safety, station and vehicle cleanliness, and crowding that do not typically inform transit Level of Service calculations. Subsequent work on the ABM has focused on the calibration of selected sub-models and the overall validation of the model results. This report represents the results of model calibration and validation activities completed over the last several years by CMAP staff and their consultants.
-              </p>
-            </div><!-- end -->
-
-          </div> <!-- end row-->
+            </div>
+          </div> 
           <br>
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-8">
-              <div class="colborder"></div><!-- end -->
+              <div class="colborder"></div>
             </div>
           </div>
           <div class="row">
@@ -196,195 +117,21 @@
               <div id="intromaplegend"></div><br>
               <p class="small">The modeling area extends beyond the 7-county CMAP region to include 21 counties. Only portions of Lee, Ogle, and LaSalle counties are included in the modeling area.  </p>
               <button type="button" class="btn btn-default btn-xs" id="introrecenter" value="Re-center map" onClick="zoomTo(center,regionmap)">Recenter Map</button>
-            </div><!-- end -->
-            <div class="col-md-6">
-              <div id="regionmap"></div><!-- end -->
-            </div> <!-- end -->
-          </div> <!-- end row -->
-          <br>
-          <br>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8">
-              <div class="colborder"></div><!-- end -->
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-              <h3>Model Steps</h3>
-              <p>The following provides a brief outline of the major steps involved in running CMAP’s ABM. Preliminary sets of highway and transit trip assignments are run to generate realistic congested travel times that are used by CT-RAMP when daily activities are scheduled. The model also accounts for the relative ease or difficulty involved in reaching destinations using various modes of transportation, including driving, walking and using transit.</p>
-              <br>
-            </div> <!-- end -->
             <div class="col-md-6">
-              <br>
-              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        <tabstyle>1 - Population Synthesis</tabstyle>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-                      A synthetic population provides the foundation for modeling individuals’ travel behavior within an activity-based model. Using Census data and other socioeconomic information, a complete set of households for the CMAP modeling area is developed.
-                      (see <a href="#2" role="tab" data-toggle="tab">Population Synthesis</a> tab).
-                      This dataset contains all of the relevant attributes about each household and individual that are required by the ABM. Since the Census Bureau does not release detailed information about every household and individual, household and person records are replicated in order to generate a complete set of households for the modeling area. Target totals for various household and population attributes guide this process so the final population is representative of the region. All of the subsequent steps in the ABM rely on the data provided in the synthetic population.
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <tabstyle>2 - Long Term Location Choices</tabstyle>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="panel-body">
-                      Two sub-models are included in this step: one that models the usual workplace locations for workers and one that models the usual school location for students. The workplace location model accounts for the worker’s occupation, as identified by the industry category they are employed in within the synthetic person file. This information is paired with jobs within the employment categories summarized at a fine geographic level to ensure that workers are sent to locations where they could be employed in their field. Similarly, enrollment figures are provided for elementary schools, high schools and colleges to ensure students are sent to realistic school locations.
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingThree">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <tabstyle>3 - Individual Mobility Attributes</tabstyle>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="panel-body">
-                      These models simulate four mobility attributes that affect individual transport mode decisions: 1) free parking eligibility for workers in the Central Business District, i.e., a determination of whether workers will pay to park; 2) household vehicle ownership; 3) whether or not individuals hold transit passes; and 4) whether or not individuals have toll transponders.
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingFour">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        <tabstyle>4 - Daily Activity and Travel Pattern</tabstyle>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                    <div class="panel-body">
-                      These models schedule activities and travel tours for all household members (see <a href="#10" role="tab" data-toggle="tab">Tours</a> tab). The first sub-model classifies daily travel patterns into three types:  </li>
-                      <ul>
-                        <li>Mandatory (work and school) – includes at least one out of home mandatory activity; </li>
-                        <li>Non-mandatory (other purposes) – includes at least one out of home non-mandatory activity but no out of home mandatory activities; </li>
-                        <li>Home – in home activities only, so no travel is involved. </li>
-                      </ul>
-
-                      <p>These activities are modeled as joint choices so that decisions made by household members affect the decisions of other members of the household. The next sub-models estimate the frequency and time of day for mandatory activities. These are given a higher priority for scheduling than non-mandatory and home activities. Following the scheduling of mandatory activities, individuals have “residual time windows” which can be used to schedule other activities including joint travel with other household members.
-                      </p>
-                      <p>The next sub-model estimates joint travel for household members. All characteristics of joint travel (travel purpose, individual household members traveling, destination and time of day) are simulated. Joint travel is conditional upon the available time window for each household member following the scheduling of mandatory activities.
-                      </p>
-                      <p>
-                        The next sub-model generates maintenance tours, which cover shopping and other household errands. These tasks are allocated to a single household member to carry out, and the destinations and times of day are generated. These tours are developed sequentially for individuals to ensure consistency in their personal schedule.
-                      </p>
-                      <p>
-                        The next sub-model simulates discretionary tours which are modeled for individual, not joint, travel. These are also modeled sequentially so that they could all realistically occur during an individual’s day.
-                      </p>
-                      <p>
-                        The final sub-model simulates at-work tours – those tours that occur during the day with the workplace as the starting and ending location.
-                      </p>
-                      <center><img src="data/images/daily.JPG"></center>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingFive">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        <tabstyle>5 - Tour Level Details</tabstyle>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                    <div class="panel-body">
-                      These sub-models determine the transport mode used on tours, the locations of intermediate stops made on the tours and the purpose of each stop.
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingSix">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        <tabstyle>6 - Trip Level Details</tabstyle>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseSix" class="collapse" aria-labelledby="headingSix">
-                    <div class="panel-body">
-                      These sub-models add details about the trips occurring within the tours including the mode of travel, the departure time from each location and the parking location for auto trips. See <a href="#5" role="tab" data-toggle="tab">Trip Mode</a> tab and
-                      <a href="#6" role="tab" data-toggle="tab">Trip Activities</a> tab.
-                      <center><img src="data/images/triplevel.JPG"></center>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingSeven">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                        <tabstyle>7 - Network Simulations</tabstyle>
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven">
-                    <div class="panel-body">
-                      Following development of the complete set of daily activities, trips are assigned to the travel networks. Motor vehicle trips developed by the ABM are routed along the model transportation network from origin to destination in order to estimate traffic flows and network conditions.  Transit trips are assigned to a network that includes all available bus and rail options between their origins and destinations.
-                      See <a href="#8" role="tab" data-toggle="tab">Highway Assignment</a> tab and
-                      <a href="#9" role="tab" data-toggle="tab">Transit Assignment</a> tab.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- end -->
-          </div><br><br>
-          <!--end row-->
+              <div id="regionmap"></div>
+            </div> 
+          </div> 
+          <br>
+          <br>
         </div>
-        <!--end tab-->
+
+        <!-- Chart Examples -->
         <div id="2" class="tab-pane container-fluid">
           <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-7">
-              <h2>Population Synthesis</h2>
-              <p>
-                Using Census data and other socioeconomic information, a complete set of households for the CMAP modeling area is developed. This dataset contains all of the relevant attributes about each household and for each individual living in those households, which is required to run the ABM. While this population is statistically representative of the Census data, the actual households and individuals are “synthetic” in that they do not represent identifiable people and an individual household in the Census data may be replicated numerous times in order to generate a complete distribution of households in the modeling inputs.
-              </p>
-              <p>
-                The current population synthesis software used by CMAP is PopSynIII. The socioeconomic data developed from CMAP’s regional forecasting and Local Area Allocation procedures provide the subzone-level control values for all <dfn
-                  data-info="ON TO 2050 is the region's long-range comprehensive plan, adopted in October 2018">ON TO 2050</dfn>
-                model scenarios. CMAP has greatly enhanced the functionality of PopSyn to enforce these controls and generate a distribution of enumerated households that account for the distribution of adults, workers and children within the
-                agency’s
-                forecasting procedures.
-              </p>
-
-              <p> Individuals are classified into one of eight mutually exclusive categories:</p>
-              <ul>
-                <li>Full-time worker: Age 16+ working at least 35 hours per week for more than 30 weeks out of the year.</li>
-                <li>Part-time worker: Age 16+ and a non-student employed less than full time.</li>
-                <li>Non-working adult: Age 16-64, non-working and a non-student.</li>
-                <li>Non-working senior: Age 65+, non-working and a non-student.</li>
-                <li>Pre-school: Age under 6.</li>
-                <li>Non-driving student: Age 6-15.</li>
-                <li>Driving age student: Age 16-19, not a full-time worker or college student.</li>
-                <li>University student: Age 18+ and school enrollment is college undergraduate or graduate school.</li>
-
-              </ul>
-              Data note: The observed data used Public Use Microdata Areas (PUMAs).  PUMAs are statistical geographic areas defined by the U.S.
-              Census Bureau for the dissemination of Public Use Microdata Sample (PUMS) data.  Two of the PUMAs used to gather observed
-              data include counties outside the CMAP modeling area (Stephenson County in Illinois, and Jefferson County in Wisconsin).
-              Data for these PUMAs is weighted by the percentage of population or households – depending on the analysis – for counties
-              within the CMAP modeling area.  As a result, the total number of observed persons or households is not always identical for
-              each summary analysis.
-            </div><!-- end -->
-          </div><!-- row end -->
+            <div class="col-md-1"></div> 
+              <h2>Chart Examples</h2>
+            </div>
           <br>
           <div class="row">
             <div class="col-md-1"></div>
@@ -394,1230 +141,77 @@
           </div>
           <div class="row">
             <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Population by Person Type</h3>
-              <div id="hlegend"></div><!-- end -->
-              <p class="small">
-              Note on "Full-time workers": The model defines full-time workers as persons working 30+ weeks in the year and
-              35+ hours per week.  Full-time workers in the observed data are persons working 27+ weeks in the year and 35+ hours per week.
-              </p><br>
-              <img src="data/images/Cursor-Click-2-icon.png" width="20px">
-              <span class="small">Hover over population categories to reveal details.</span>
-            </div> <!-- end -->
-            <div class="col-md-6">
-              <div id="PopPersonType"></div><!-- end -->
-            </div> <!-- end -->
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                      The model closely represents the number of full-time workers in the region (the largest person type by percentage).
-                      The model slightly overestimates the number of part-time workers and non-working adults.  The largest disparities
-                      between the modeled and observed populations in terms of percentage points are for university students and
-                      non-working seniors.  In both instances, the model is underrepresenting the population of these person types.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> <!-- end -->
-          <br>
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col col-md-1">
-            </div>
-            <div class="col col-md-2">
-              <h3>Households by Size</h3>
-              <br>
-              <div id="hhlegend"></div><!-- end -->
-              <img src="data/images/Cursor-Click-2-icon.png" width="20px">
-              <span class="small">Hover over household size categories to reveal details.</span>
-            </div> <!-- end -->
-            <div class="col-md-6">
-              <div id="HouseholdSize" width="100%"></div><!-- end -->
-            </div> <!-- end -->
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    In terms of the percentage of total households, the model slightly underrepresents
-                    one-person households in the region. The model also underrepresents the number of two-person households.
-                    However, three and four-person households
-                    are considerably overrepresented in the model. The largest disparity between modeled and observed
-                    households in terms of percentage is for large households (5+ people). </p>
-                </div>
-              </div>
-            </div>
-          </div> <!-- end row-->
-
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col col-md-1">
-            </div>
             <div class="col-md-2">
-              <h3>Household Characteristics</h3>
-              <h5>Households by <span id="hhtitle"></span>
-              </h5>
-              <br><br>
+              <h3>Horizontal Stacked Bar</h3>
+              <div id='hlegend'></div>
+            </div>
+            <div class="col-md-6">
+              <div id='PopPersonType'></div>
+            </div> 
+          </div> 
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8">
+              <div class="colborder"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+              <h3>Grouped Bar Fly In with Dropdown</h3>
+              <h5>Households by <span id="hhtitle"></span></h5>
+              <br>
+              <br>
               <select id="catPopSyn">
                 <option value="age">Head of Household Age</option>
                 <option value="workers">Household Workers</option>
                 <option value="income">Household Income</option>
                 <option value="size">Household Size</option>
                 <option value="veh">Vehicles in Household</option>
-              </select><!-- end -->
+              </select>
               <br><br>
-              <div id="pumsLegend"></div>
-              <br>
-              <br>
-              <p class="small">
-                 Income is in 1999 dollars.
-
-              </p>
-            </div><!-- end -->
-            <div class="col-md-6">
-              </h4><!-- end -->
-              <div id="PurposeChartpums"></div><!-- end -->
-            </div><!-- end -->
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model does a reasonably well job of representing the various household characteristics.
-                    For instance, the number of 0-worker households is almost identical in the modeled and observed data,
-                    and the number of vehicles by household are very similar for modeled and observed households.
-                    The model slightly overestimates the number of lower income households and underestimates the number of high income households. </p>
-                </div>
-              </div>
+              <div id='pumsLegend'></div>
             </div>
-          </div> <!-- end -->
-          <br>
+            <div class="col-md-6">
+              <div id='PurposeChartpums'></div>
+            </div> 
+          </div> 
           <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
+            <div class="col-md-1"></div>
             <div class="col-md-8">
               <div class="colborder"></div>
             </div>
           </div>
           <div class="row">
-            <div class="col col-md-1">
-            </div>
+            <div class="col-md-1"></div>
             <div class="col-md-2">
-              <h3>Household Detail</h3>
-              <h5>Distribution of Adults Per Household by <div id="popcttitle"></div>
-              </h5>
+              <h3>Grouped Stacked Bar with Dropdown</h3>
+              <h5>Distribution of Adults per Household by <div id="popcttitle"></div></h5>
+              <br>
               <br>
               <select id="popsyn_ct">
                 <option value="children">Children</option>
                 <option value="workers">Workers</option>
               </select>
-              <br>
-              <br>
-              <div id="stackedAdultLegend"></div>
-              <br>
-            </div>
-            <div class="col col-md-6">
-              <div id="popsyncrosstab"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    There is a discrepancy in the number of workers in households with one adult,
-                    and the model overestimates the total number of households with three adults.
-                    Similarly, when examining households by the number of children, the model overestimates
-                    the number of households with two adults and one child and underestimates the number of
-                    households with two children, regardless of the number of adults in the household.</p>
-                </div>
+              <br><br>
+              <div id='stackedAdultLegend'></div>
               </div>
-            </div>
-          </div>
-        </div>
-        <!--end tab-->
-        <!-- Auto Counts -->
-        <div id="3" class="tab-pane container-fluid">
-          <div class="row">
-            <!--Auto Counts-->
-            <div class="col-md-1"></div>
-            <!--end-->
-            <div class="col-md-7">
-              <h2>Vehicle Ownership</h2>
-              <p>
-                  Vehicle ownership plays an important role in individuals’ travel behavior decisions and helps define the set of travel mode options available to them. For example, households that own no vehicles may be dependent on transit to make their trips. Note that vehicle ownership refers to motor vehicles owned or leased by a household, including autos, pickup trucks, SUVs and motorcycles.
-              </p>
-              <br>
-            </div>
-          </div> <!-- end row -->
+            <div class="col-md-6">
+              <div id='popsyncrosstab'></div>
+            </div> 
           <div class="row">
             <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
             <div class="col-md-8">
               <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-              <h3>Number of Households by Vehicles Owned</h3>
-              Total Households: <span class="modtotal"></span> Model, <span class="surveytotal"></span> Survey
-              <div id="autoLegend"></div>
-            </div>
-            <div class="col-md-6">
-              <br>
-              <svg id="aoCountBar" width="700" height="375" preserveAspectRatio="xMidYMid meet"></svg>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model does a good job predicting the number of vehicles owned by households. It is just slightly under-estimating the number of households with zero or 1 vehicle, and is just slightly over-estimating that number of households that own at least 2 vehicles. </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <br>
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-              <!-- <h3>Auto Sufficiency</h3> -->
-              <h3>Distribution of Vehicle Ownership by <div id="dtitle"></div>
-              </h3>
-              Total Households: <span class="modtotal"></span> Model, <span class="surveytotal"></span> Survey
-              <br><br>
-              <select id="aoCat">
-                <option value="size">Household Size</option>
-                <option value="income">Household Income</option>
-                <option value="workers">Household Workers</option>
-              </select>
-              <br>
-              <div id="stackedAutoLegend"></div>
-              <br>
-              <br>
-              <p class="small">
-                Income is in 1999 dollars.
-
-             </p>
-            </div>
-            <div class="col col-md-6">
-              <div id="stackedbar"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                      The model accurately predicts the distribution of vehicle ownership by household size, household income, and household workers. However, the model tends to under-estimate the number of households with at least 3 vehicles for larger households and high income households. It is also over-estimating the number of zero-worker households that own at least 2 vehicles. </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Work Flows -->
-        <div id="4" class="tab-pane  container-fluid">
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-6">
-              <h2>Work Flows</h2>
-              <p>
-                Commute trips are an important part of a region’s overall travel pattern and are a key component of
-             congestion experienced on the transportation system, especially during the morning and evening hours. 
-             Ensuring that commuters are traveling between the appropriate home and work locations is one important way
-             to verify that travel demand models reflect actual travel patterns.   <br><br>
-
-                Note there are two sources for observed data on this page. The first three tables use data from journey-to-work flows from the Census
-                Transportation Planning Package (CTPP). The remaining two charts use data from household travel surveys. CTPP data is generally used to
-                estimate models that address work flows due to the large sample of data included. Data from household travel surveys can be used to supplement
-                the journey-to-work information from the CTPP, as travel surveys offer more detailed information about the trips than the Census provides.
-              </p>
-              <br>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"> </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <h3>Modeled Journey to Work Flows</h3>
-              <br>
-            </div>
-            <div class="col-md-6">
-              <br />
-              <table id="modelcountyflow_cal"> </table>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"> </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <h3>Observed Journey to Work Flows</h3>
-              <br>
-            </div>
-            <div class="col-md-6">
-              <br />
-              <table id="ctppcountyflow_cal"> </table>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"> </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <h3>Difference Model and Observed Journey to Work Flows</h3>
-              <br>
-            </div>
-            <div class="col-md-5">
-              <br />
-              <table id="caldiffcountyflow"> </table>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <img src="data/images/icons8-add-50.png" class="image">
-                  <div class="overlay">
-                    <p>
-                      The model does a good job of replicating the number of commute trips being made within and between the counties in the CMAP region.  For instance, the model matches the Census data in showing that the top three work locations in northeastern Illinois are Cook, DuPage and Lake counties, in that order.  Both the modeled and observed data show that close to 45% of the total work trips made in the extended modeling area occur entirely within Cook County.  The model is underestimating the number of Cook and DuPage residents that live in one county and work in the other.  It is also underestimating the number of Cook residents that work in Lake and Will counties.
-                    </p>
-                  </div>
-                </div>
-          </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"> </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-2" style="text-align:center">
-              <br />
-              <h3>Origin and Destination Work Flows</h3>
-              From
-              <!-- Split button -->
-              <div class="btn-group" id="workfrom" style="margin:auto;width:auto">
-                <button type="button" id="WorkFrom" class="btn btn-danger" style="color: rgb(171, 171, 171); font-size: 18px;">Chicago (CBD)</button>
-                <button type="button" class="btn btn-info dropdown-toggle" style="background-color: rgb(207, 207, 207) !important; border-color: rgb(207, 207, 207) !important" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a>All</a></li>
-                  <li><a>Chicago (CBD)</a></li>
-                  <li><a>Chicago (North)</a></li>
-                  <li><a>Chicago (South)</a></li>
-                  <li><a>Chicago (West)</a></li>
-                  <li><a>Cook (North)</a></li>
-                  <li><a>Cook (South)</a></li>
-                  <li><a>Cook (West)</a></li>
-                  <li><a>DuPage</a></li>
-                  <li><a>Kane</a></li>
-                  <li><a>Kendall</a></li>
-                  <li><a>Lake</a></li>
-                  <li><a>McHenry</a></li>
-                  <li><a>Will</a></li>
-                </ul>
-              </div>
-              <br>
-              To &nbsp;&nbsp;&nbsp;
-              <!-- Split button -->
-              <div class="btn-group" id="workto">
-                <button type="button" id="WorkTo" class="btn btn-danger" style="color: rgb(171, 171, 171); font-size: 18px;">Chicago (CBD)</button>
-                <button type="button" class="btn btn-info dropdown-toggle" style="background-color: rgb(207, 207, 207) !important; border-color: rgb(207, 207, 207) !important" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a>All</a></li>
-                    <li><a>Chicago (CBD)</a></li>
-                    <li><a>Chicago (North)</a></li>
-                    <li><a>Chicago (South)</a></li>
-                    <li><a>Chicago (West)</a></li>
-                    <li><a>Cook (North)</a></li>
-                    <li><a>Cook (South)</a></li>
-                    <li><a>Cook (West)</a></li>
-                    <li><a>DuPage</a></li>
-                    <li><a>Kane</a></li>
-                    <li><a>Kendall</a></li>
-                    <li><a>Lake</a></li>
-                    <li><a>McHenry</a></li>
-                    <li><a>Will</a></li>
-                </ul>
-              </div>
-
-              <br>
-              <div id="wflowinfocontainer" style="display:inline-block">
-                <div id="wflowinfo" style="margin-left:20px;"></div>
-                <div id="wflowinfo2" style="margin-left:20px;"></div>
-              </div><br><br>
-              <div id="wflowmap"></div>
-              <br>
-              <div style="text-align:left">
-                <button type="button" class="btn btn-default btn-xs" id="wrecenter" value="Re-center map" onClick="zoomTo(center,wflowmap)">Recenter Map</button>
-                <img src="data/images/Cursor-Click-2-icon.png" width="20px">
-                <span class="small" style="text-align:left">Hover over the chord diagram to see area boundaries on the map. Click on the map to see area name. Choose work flow geographies in the drop down menu to view numerical values for work
-                  trips.</span>
-              </div>
-            </div>
-            <div class="col col-md-6">
-            <div class="col col-md-6" align="center">
-              <br />
-              <h3>Modeled</h3>
-              <br />
-              <br />
-              <div id="modelChord"></div>
-            </div>
-            <div class="col col-md-6" align="center">
-              <br />
-              <h3>Observed</h3>
-              <br />
-              <br />
-              <div id="obsChord"></div>
-            </div>
-            </div>
-            <div class="col col-md-2">
-            </div>
-          </div>
-          <!--- Row End -->
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"> </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"> </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Work Trips by Mode and Distance</h3>
-              <br>
-              <p>
-                <span id="worktripsmodedistance_p"></span>
-                of all work trips</p>
-
-              <select id="catModeDist">
-                <option value="all">All Modes</option>
-                <option value="sovfree">Drive Alone (non-toll)</option>
-                <option value="sovpay">Drive Alone (toll)</option>
-                <option value="hov2free">Shared ride 2 (non-toll)</option>
-                <option value="hov2pay">Shared ride 2 (toll)</option>
-                <option value="hov3">Shared ride 3+</option>
-                <option value="transit">Transit</option>
-                <option value="walk">Walk</option>
-                <option value="bike">Bike</option>
-                <option value="taxi">Taxi</option>
-              </select>
-              <br><br>
-              <div id="worktripsdistanceLegend"></div>
-              <div class="small" style="margin-top: 20px;">
-                Shared ride 3+ toll and non-toll trips are combined due to the small sample of these trips captured by the Travel Tracker Survey.
-                <br><br>
-              </div>
-            </div>
-            <div class="col col-md-6">
-              <div id="ModeByDistance"></div>
-            </div>
-            <div class="col col-md-2">
-                <div class="container">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <img src="data/images/icons8-add-50.png" class="image">
-                  <div class="overlay">
-                    <p>
-                      Driving is the most frequently used mode for traveling to work in the region and the model does a reasonable job replicating the number of people driving different distances to work.  Nearly two-thirds of the commute trips in the region are people driving alone on trips that do not involve paying a toll and the modeled trips match the distance pattern for this group well, somewhat overestimating the extremely short trips (under 2.5 miles) and underestimating the trips longer than 30 miles.  A similar pattern is seen in the transit trips – the longer trips are underrepresented in the model and the shorter trips are overrepresented. </p>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"> </div>
-          </div>
-        </div>
-        <div id="5" class="tab-pane container-fluid">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-7">
-              <h2>Trips by Mode</h2>
-              <p>
-                The CT-RAMP model includes eleven options for travel modes. These include the non-motorized options of walking or cycling, as well as transit, taxis and school bus. There are six options for auto trips, which are categorized by the number of vehicle occupants and whether or not the trip includes a toll. Vehicle occupancy categories include single occupants, two people sharing a vehicle, or more than two people sharing a vehicle.
-              </p>
-              <br>
             </div>
           </div>
           <br>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Trips by Mode</h3>
-              <svg id="modelegend" style="height:300px"></svg>
-              <br />
-              <div class="small">
-                See more about transit in the <a href="#7" role="tab" data-toggle="tab">Transit</a> tab. <br>
-                  <img src="data/images/Cursor-Click-2-icon.png" width="20px">
-                  <span>Hover over bars to compare trips by mode.</span>
-                <br><br>
-              </div>
-            </div>
-            <div class="col col-md-6">
-
-              <div id="stackedmode"></div>
-            </div>
-
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    While the model tends to overestimate walk trips,
-                    all other modes match observed trips fairly well. The model maintains relative shares among mode categories.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="col col-md-4" align = "center">
-            <div class="colborder"></div>
-            <h5><b>Modeled Mode Share</b></h5>
-            <p style="font-size:small;">CMAP ABM - 2010 Scenario</p>
-            <div id="pieMode2"></div>
-          </div> -->
-          </div>
-
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col col-md-1">
-            </div>
-            <div class="col col-md-2">
-              <!-- <div class="colborder"></div>end -->
-              <h3>Trips by Person Type and Mode</h3>
-              <br>
-              <p>
-                <span id="tripspersonmode_p"></span>
-                of all trips</p>
-              <select id="catModePer">
-                <option value="All">All</option>
-                <option value="Full-time worker">Full-time Worker</option>
-                <option value="Part-time worker">Part-time Worker</option>
-                <option value="Non-worker">Non worker</option>
-                <option value="Retired">Non-working senior</option>
-                <option value="Child too young for school">Preschool</option>
-                <option value="Student of driving age">Student 16+</option>
-                <option value="Student of non-driving age">Student under 16 years</option>
-                <option value="University student">University Student</option>
-              </select>
-              <div id="tripspersonLegend"></div>
-              <div class="small" style="margin-top: 20px;">
-                Individual trips only. <br>
-              </div><br>
-            </div>
-            <div class="col col-md-6">
-              <!-- <div class="colborder"></div>end -->
-
-              <div id="ModebyPerson"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    Modeled trip modes for non-student person types are close to observed trips modes. Though student trips are not reflected as accurately,
-                    they make up a small fraction
-                    of all trips. In many cases, modeled student trips are closer to the
-                    observed trips, in terms of number of trips, than other person types.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col col-md-1">
-            </div>
-            <div class="col col-md-2">
-              <h3>Trips by Household Income and Mode</h3>
-              <br>
-              <p>
-                <span id="tripsincomemode_p"></span>
-                of all trips</p>
-              <select id="catModeInc">
-                <option value="All">All</option>
-                <option value="Less than $35k">Less than $35k</option>
-                <option value="$35k to $50k">$35k to $50k</option>
-                <option value="$50k to $75k">$50k to $75k</option>
-                <option value="$75k to $100K">$75k to $100K</option>
-                <option value="More than $100k">More than $100k</option>
-              </select>
-              <div id="tripsbyincomeLegend"></div><br><br>
-              <div class="small">
-                  Income is in 2007 dollars.
-              </div>
-            </div>
-            <div class="col col-md-6">
-
-              <div id="ModebyIncome"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model overestimates lower income trips and underestimates higher income trips, but middle income trips compare well to the observed trips. For all household income categories, the mode trends are in agreement with the
-                    observed data.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col col-md-2">
-              <!-- <div class="colborder"></div>end -->
-              <h3>Trips by Purpose and Mode</h3>
-              <br>
-              <p>
-                <span id="tripspurposemode_p"></span>
-                of all trips</p>
-              <select id="catModePurp">
-                <option value="All">All</option>
-                <option value="Discretionary">Discretionary</option>
-                <option value="Eating Out">Eating Out</option>
-                <option value="Escort">Escort</option>
-                <option value="Maintenance">Maintenance</option>
-                <option value="School">School</option>
-                <option value="Shop">Shop</option>
-                <option value="University">University</option>
-                <option value="Visiting">Visiting</option>
-                <option value="Work">Work</option>
-                <option value="Work-based">Work-based</option>
-              </select>
-
-              <div id="tripspurposemodeLegend"></div>
-              <br><br>
-              <div class="small">
-                See more about trip purpose in the <a href="#6" role="tab" data-toggle="tab">Trip Activities</a> tab.
-              </div><br>
-            </div>
-            <div class="col col-md-6">
-              <!-- <div class="colborder"></div>end -->
-
-              <div id="ModeByPurpose"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    Aside from a few, less impactful outliers such as transit and taxi trips for university activities, the model produces generally reasonable results for each trip purpose. The mode distributions of work and shop trips – the most
-                    common trip purposes and nearly half of all trips – have strong correlations to the observed trips.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <br>
         </div>
-
-        <div id="10" class="tab-pane container-fluid">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-7">
-              <h2>Tours</h2>
-              <p>
-                Tours are chains of trips that start at one location and return
-                to that same location. A common example is a trip made from home to work,
-                followed by another commute trip returning home later in the day.
-                Tours are composed of a minimum of two trips. Tours may also contain sub-tours,
-                for example traveling from work to an external meeting and then returning to work.
-                Tours may be completed by an individual or can include multiple people traveling together.
-              </p>
-              <p>
-                Daily activities are categorized into three types: mandatory, nonmandatory, or home.
-             Activities are placed within these three categories based on the relative importance
-             of the role they play in defining one’s day. Mandatory activities
-             (which include work and school) are the most inflexible in terms of
-             when they occur and where they are located. Nonmandatory activities
-             have greater flexibility in when they occur and where their locations are.
-             Home tours are stationary and are not assigned a travel mode.
-              </p>
-              <br>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Daily Activity Patterns By Person Type</h3>
-              <p>
-                <span id="dap_p"></span>
-                of all tours</p>
-              <br />
-              <select id="catdap">
-                <option value="M">Mandatory Activity</option>
-                <option value="N">Non-Mandatory Activity</option>
-              </select>
-              <div id="dapLegend"></div>
-              <div class="small" style="margin-top: 80px;">
-                Bars show number of individual tours in the selected activity type
-                (mandatory, nonmandatory) that will be scheduled for each person type.
-                Activities that occur at home make up the remaining 16.3% of all tours, and these are not assigned a travel mode.
-              </div><br>
-            </div>
-            <div class="col col-md-6">
-              <div id="dap"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model does a good job of matching the number of mandatory tours especially for full-time workers and non-driving students, which account for nearly 80% of mandatory tours. The modeled data also closely match the pattern of nonmandatory and home activities, with the notable exception being that the model is overestimating of the number of nonmandatory tours for non-working adults.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Tours by Person Type</h3>
-              <br>
-              <div id="tourlegend"></div>
-              <div class="small">
-                <img src="data/images/Cursor-Click-2-icon.png" width="20px">
-                <span>Hover over bars to compare tours by person type.</span>
-              </div>
-            </div>
-            <div class="col col-md-6">
-              <div id="TourPersonType"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                      The largest proportion of tours is for full-time workers, and the model slightly underrepresents these
-                      (3.89 million modeled tours vs. 4.05 million observed tours).  Tours for part-time workers, non-working
-                      adults and non-working seniors are all noticeably overestimated by the model.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Tour Arrival and Departure Time of Day</h3>
-              <br>
-
-              <select id="todcat">
-                <option value="all">All</option>
-                <option value="discretionary">Discretionary</option>
-                <option value="escort">Escort</option>
-                <option value="maintenance">Maintenance</option>
-                <option value="school">School</option>
-                <option value="university">University</option>
-                <option value="work">Work</option>
-                <option value="work-based">Work-based</option>
-              </select><!-- end -->
-              <br>
-              <div id="tourtod_legend"></div>
-              <br><br>
-              <div class="small">
-                Tour arrival and departure times are grouped into 40 time slices of the day.
-                <br><br>
-              </div>
-            </div>
-            <div class="col col-md-6">
-              <div id="tod_line"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    Overall the model accurately predicts tour arrivals and departures by time of day, particularly for all trips.  Modeled work trips closely resemble observed work trips with noticeable peaks during the morning and
-                    afternoon/evening rush periods.  Modeled escort tours also resemble the observed data, though to a slightly lesser extent than more predictable work or school tours.  One tour type where the model differs from observed tours is
-                    university tours.  Whereas morning departure times are closely related, there is greater variability in the observed arrival times throughout the afternoon that the model does not necessarily capture.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-
-
-        <div id="6" class="tab-pane container-fluid">
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-7">
-              <h2>Trip Activities</h2>
-              <p>
-                The CMAP ABM classifies trips into ten activity types. Activities can be grouped into two categories according to their priority in determining an individual’s schedule: mandatory and nonmandatory. Mandatory activities include: </p>
-              <ul>
-                <li>
-                  Work - Working at regular workplace.
-                </li>
-                <li>
-                  University - Attending college.
-                </li>
-                <li>
-                  School - Attending school grades K-12.
-                </li>
-              </ul>
-              <p>
-                The remaining activities are all considered nonmandatory: </p>
-              <ul>
-                <li>
-                  Shopping - Shopping away from home.
-                </li>
-                <li>
-                  Escort - Picking up/dropping off passengers (auto trips only).
-                </li>
-                <li>
-                  Eating out - Eating outside of home.
-                </li>
-                <li>
-                  Work-based - A subset of activities (such as going to lunch or traveling to meet a client) that occur with the place of work as the anchor location.
-                </li>
-                <li>
-                  Maintenance - Activities that include medical appointments and other personal business or services that people engage in, excluding shopping and escorting activities.
-                </li>
-                <li>
-                  Discretionary - Engaging in social or recreational activities; attending sporting or cultural events; and attending religious activities or performing volunteer activities.
-                </li>
-              </ul>
-              <br>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Trip Activities</h3>
-              <br>
-              <svg id="activitieslegend"></svg><!-- end -->
-
-              <div class="small">
-                <img src="data/images/Cursor-Click-2-icon.png" width="20px">
-                <span>Hover over bars to compare trips by activity</span>
-                <br><br>
-              </div>
-            </div>
-            <div class="col col-md-6">
-              <div id="stackedactivity"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model overestimates work activities and underestimates maintenance and escort activities. The frequencies of all other activities are well represented. The difference in modeled and observed work activities could be related to
-                    the unusual economic conditions at the time the observed data was collected.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col col-md-2">
-              <h3>Trips by Person Type and Purpose</h3>
-              <br>
-              <p>
-                <span id="tripspersonpurpose_p"></span>
-                of all trips</p>
-              <select id="catPurpType">
-                <option value="All">All</option>
-                <option value="Full-time Worker">Full-time Worker</option>
-                <option value="Part-time Worker">Part-time Worker</option>
-                <option value="Non worker">Non worker</option>
-                <option value="Non-working senior">Non-working senior</option>
-                <option value="Preschool">Preschool</option>
-                <option value="Student 16+">Student 16+</option>
-                <option value="Student under 16 years">Student under 16 years</option>
-                <option value="University Student">University Student</option>
-              </select>
-              <div id="tripsptypepurposeLegend"></div>
-              <div class="small" style="margin-top: 20px;">
-                Individual trips only. <br>
-              </div><br>
-            </div>
-            <div class="col col-md-6">
-              <div id="PurposebyType"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    With the exception of students under 16 years, the model does a better job matching observed non-student trip purposes. The one major difference among the non-student trips shows that the overestimation of work trip activities is
-                    limited to part-time workers.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div> <!-- end -->
-            <div class="col col-md-2">
-
-              <h3>Trips by Purpose and Distance</h3>
-              <br>
-              <p>
-                <span id="tripspurposedistance_p"></span>
-                of all trips</p>
-              <select id="catDistPurp">
-                <option value="All">All</option>
-                <option value="Discretionary">Discretionary</option>
-                <option value="Eating Out">Eating Out</option>
-                <option value="Escort">Escort</option>
-                <option value="Maintenance">Maintenance</option>
-                <option value="School">School</option>
-                <option value="Shop">Shop</option>
-                <option value="University">University</option>
-                <option value="Visiting">Visiting</option>
-                <option value="Work">Work</option>
-                <option value="Work-based">Work-based</option>
-              </select>
-              <div id="tripspurposedistLegend"></div>
-            </div>
-            <div class="col col-md-6">
-              <div id="DistbyPurpose"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model is capable of capturing trip purposes for most trip distances, but tends to overestimate short trips and underestimate long trips. This behavior mostly applies to work trips. </p>
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3"></div> <!-- end -->
-
-            <div class="col-md-6">
-              <br />
-              <br />
-
-            </div>
-          </div>
-
-        </div>
-        <div id="7" class="tab-pane  container-fluid">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
-              <h2>Transit Trips</h2>
-              <p>Transit is a vital part of the transportation system in
-                northeastern Illinois and more than 600 million transit trips are made annually.
-                It is important to properly calibrate such a key travel mode to ensure that the modeled
-                transit trips reflect the <dfn data-info="The set of all destinations that can be reached from a location by transit">travel sheds</dfn> actually served by transit.
-              </p>
-              <br>
-              <br>
-              <br>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8">
-              <div class="colborder"></div><!-- end -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-              <h3>Modeled vs. Observed Transit Trips Origin and Destination</h3>
-              <p>
-                  <p class="small"> The scatterplot includes a point for each origin/destination pair. A map of origin/destination areas is shown below, with the CMAP region shaded for reference.
-                    </p>
-                <b>r<sup>2</sup></b> = <text_div id="transitrs"></text_div>
-              </p>
-              <div id="transitodmap"></div>
-              <br>
-              <button type="button" class="btn btn-default btn-xs" id="transitrecenter" value="Re-center map" onClick="zoomTo(center,transitmap)">Recenter Map</button>
-
-            </div>
-            <div class="col-md-6">
-              <div id="scatter_transit"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The graph shows a strong correlation between the modeled and survey data.  The coefficient of determination (0.905) indicates the regression line is a good fit and accounts for more than 90% of the variation between the data sets.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8">
-              <div class="colborder"></div><!-- end -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Transit Trips by <span id="transitname"></span></h3>
-              <p>Total transit trips: 1.63M Model, <span id="surveytransit"></span> Survey</p>
-              <select id="catTranDist">
-                <option value="Distance">Distance</option>
-                <option value="Income">Income</option>
-              </select>
-              <br>
-              <div id="transitaccessLegend"></div>
-              <div class="small" style="margin-top:20px;">
-                Distance is the distance of the transit trip that occurred.  Income is in 2007 dollars.
-                They survey has fewer total transit trips when viewed by income since not all respondents reported an income value. <br><br>
-              </div>
-            </div>
-            <div class="col col-md-6">
-              <div id="TranDist"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model overestimates the number of shorter transit trips (less than 10 miles) and underestimates the number of longer transit trips (greater than 15 miles). The greatest discrepancies are for very short trips (less than 2.5
-                    miles) and very long trips (30 miles or more).
-                  </p>
-                  <p>
-                    For transit trips by income, the model generally matches the observed data. However, the model significantly overestimates the number of transit trips made by persons in the $35k to $50k income range.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8">
-              <div class="colborder"></div><!-- end -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-2">
-              <h3>Transit Access</h3>
-              <p class="small">
-              The Drive to Transit access mode includes individuals parking at transit stations (Park and Ride) and those who are dropped
-              off at the station (Kiss and Ride).  The Walk to Transit access mode includes people walking or cycling to get to transit.
-              </p>
-              <br><br>
-              <img src="data/images/Cursor-Click-2-icon.png" width="20px">
-              <span class="small">Hover over pie chart to compare transit access.</span>
-            </div>
-            <div class="col col-md-6">
-            <div class="col col-md-6" align="center">
-              <h5><b>Modeled Transit Access</b></h5>
-              <p style="font-size:small;">CMAP ABM - 2010 Scenario</p>
-              <div id="pieTransitModelMode"></div>
-            </div>
-            <div class="col col-md-6" align="center">
-              <h5><b>Observed Transit Access</b></h5>
-              <p style="font-size:small;">Travel Tracker Survey, 2007-2008</p>
-              <div id="pieTransitSurveyMode"></div>
-            </div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    A slightly higher percentage of modeled transit trips (89.9%) are accessed by walking than observed transit trips (88.4%).   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="11" class="tab-pane  container-fluid" style="min-height:80vh">
+       
+        <!-- Household Validation -->
+        <div id="3" class="tab-pane  container-fluid" style="min-height:80vh">
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-6">
@@ -1630,7 +224,7 @@
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-8">
-              <div class="colborder"></div><!-- end -->
+              <div class="colborder"></div>
             </div>
           </div>
           <br><br>
@@ -1718,375 +312,8 @@
             </div>
           </div>
         </div>
-        <div id="8" class="tab-pane container-fluid">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
-              <h2>Highway Assignment</h2>
-              <p>
-                During Highway Assignment, the individual motor vehicle trips developed by the ABM are routed along the model transportation network from origin to destination in order to estimate traffic flows and network conditions.  As additional vehicles attempt to use the same roadway segments during the assignment, travel becomes more congested and travel times increase.  The assignment procedures implement a series of steps moving various portions of traffic onto alternative routes in an attempt to reduce congestion and minimize travel costs.  Equilibrium is reached within the highway assignment when vehicles cannot change paths without negatively impacting travel times.  Once equilibrium is reached, the volume of vehicles on each roadway segment is retained and can be used to calculate standard measures such as vehicle miles of travel (VMT).
-            </p>
-              <br>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <!-- end -->
-              <h3>Daily VMT Shares by County</h3>
-              <!-- <div id="highwayvmtLegend"></div> -->
-            </div>
-            <div class="col-md-5">
-              <br>
-              <table id="vmt_county_tbl"></table>
-              <!-- <div id="vmtcounty" ></div> -->
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    In general, the model underestimates the total VMT for the 7-county region (160 million VMT vs. 167 million VMT). However, the VMT shares by county are very similar between the modeled and observed data. Counties with less VMT – like Kendall and McHenry – have very similar modeled vs. observed VMT shares, while Cook County accounts for 53.3% of modeled VMT and 50% of observed VMT.  </p>
-                </div>
-              </div>
-            </div>
-          </div><!-- end row-->
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <h3>Daily VMT Shares by County and Facility Type</h3>
-              <br />
-              <div id="vmtfacilityLegendNew"></div>
-              <br />
-            </div>
-            <div class="col-md-5">
-              <center>
-                <div id="cfstack"></div>
-              </center>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model does a good job of predicting the VMT shares by facility type for a few areas, including Suburban Cook and DuPage Counties.  The share of modeled vs observed VMT on local roads is almost identical for these two areas.  In Lake County, the model is overestimating the amount of VMT on interstates and underestimating the VMT on arterial streets.  In Chicago, the model is slightly underestimating the VMT on arterial streets.  In general, the share of modeled and observed VMT on arterials is lower in the City of Chicago, Suburban Cook County, DuPage County and Will County. 
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div><!-- end row-->
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <h3>Modeled vs. Observed Average Daily Link Volumes</h3>
-              <br>
-              <div id="scatterLegend"></div>
-              <p><b>r<sup>2</sup></b> = <text_div id="r2"></text_div>
-              </p>
-            </div>
-            <div class="col-md-5">
-              <div id="scatter_vmt"></div>
-            </div>
-            <div class="col col-md-2 ">
-                <div class="container">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <img src="data/images/icons8-add-50.png" class="img-fluid image">
-                  <div class="overlay">
-                    <p>
-                      The scatterplot shows a strong correlation between the observed average daily link volume
-                      and the modeled daily link volume, which is verified with an r-squared value of 0.86. A value
-                      of 0.86 means that the regression line shown is a good fit of the observed data and accounts
-                      for 86% of the variation in the data.
-                      The correlation between the observed and modeled average daily link volumes is stronger for
-                      interstates than for arterials/collectors.
-                    </p>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <h3>Daily VMT By Interstate</h3>
-              <p class=small>This comparison examines vehicles separated into two categories: auto
-                (which includes cars, SUVs, pickup trucks, etc. that people drive for their
-                personal use) and commercial vehicles (which include package delivery trucks
-                all of the way up to tractor-trailers) used to conduct business activities.</p>
-
-                <p class=small>
-                  Truck volumes on I-190 not shown due to bar scale. Model and observed values equals 11,512 and 9,917 respectively.
-                </p>
-              <div id="hwyvmtLegend"></div>
-              <div id="interstate_map"></div><br>
-              <br>
-              <button type="button" class="btn btn-default btn-xs" id="wrecenter" value="Re-center map" onClick="zoomTo(center,interstate_map)">Recenter Map</button><br />
-              <img src="data/images/Cursor-Click-2-icon.png" width="12px">
-              <span class="small">Hover over bars to display values and highlight segment on map. Click on a highway segment on the map to show the name.</span>
-            </div>
-            <div class="col-md-5">
-            <div class="col-md-6" style="text-align:center">
-              <br>
-              <br>
-              <h4>Auto</h4>
-              <div id="autohwyassignment"></div>
-            </div>
-            <div class="col-md-6" style="text-align:center">
-              <br>
-              <br>
-              <h4>Truck</h4>
-              <div id="truckhwyassignment"></div>
-            </div>
-            </div>
-            <div class="col col-md-2 ">
-                <div class="container">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <img src="data/images/icons8-add-50.png" class="img-fluid image">
-                  <div class="overlay">
-                    <p>
-                      The model over predicts the amount of weekday traffic on the interstate system. Separating the VMT into auto and commercial vehicle components shows that truck tollway freeway volumes are over estimated in the compared to the observed data. Overall, modeled auto volumes show a closer relationship to the observed data for both freeways and tollways.
-                    </p>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <h3>Daily VMT by Volume Range</h3>
-              <br />
-            </div>
-            <div class="col-md-5">
-              <!-- <center> -->
-                <br />
-                <br />
-                <table id="vrange_consolidated"></table>
-              <!-- </center> -->
-            </div>
-            <div class="col col-md-2 ">
-                <div class="container">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <img src="data/images/icons8-add-50.png" class="img-fluid image">
-                  <div class="overlay">
-                    <p>
-                        This analysis compares modeled volumes to links that have observed traffic
-                        counts on them.  Overall the model is overestimating traffic on these links
-                        by less than 2%, an extremely close margin.  VMT on the lowest volume roads
-                        are being overestimated, while VMT is underestimated by the model on the highest
-                        volume road segments.  For the five categories from 5,000 up to 59,999 the model
-                        is overestimating VMT by less than 9%, and for two categories the VMT difference
-                        is less than 2%.
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 colborder"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-              <h3>Root Mean Squared Error Analysis</h3>
-              <br />
-              <p class="small"> Links were grouped into volume bins based on the observed traffic counts (AADT) and linear regression analyses
-                were completed for each group. The root mean squared error (RMSE) is a measure commonly-used for model validation
-                analyses and compares the average difference between the observed values and the modeled volume predicted by the
-                linear regression. The percent RMSE standardizes the value by dividing it by the average of the AADT. </p>
-
-                <p class="small">
-                  Target values represent the standard maximum acceptable root mean squared error from the Florida Department of Transportation, which are often cited as model validation goals.
-                </p>
-            </div>
-            <div class="col-md-5">
-              <br />
-              <table id="rmse_7"></table>
-              <!-- <div id="rmse_line"></div> -->
-            </div>
-            <div class="col col-md-2 ">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br /><br />
-                <img src="data/images/icons8-add-50.png" class="img-fluid image">
-                <div class="overlay">
-                  <p>
-                      For the lowest volume categories, which contain about 87% of the links measured, the percent RMSE is below the
-                      Florida target value.  There is a spike in the 15,000-19,999 category, where the percent RMSE is 8 percentage
-                      points higher than the target value.  The higher volume categories also exceed the target value but by smaller
-                      amounts.  Overall this analysis shows that the ABM is dong a reasonable job of replicating the observed traffic
-                      counts.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- TRANSIT ASSIGNMENT -->
-        <div id="9" class="tab-pane container-fluid">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
-              <h2>Transit Assignment</h2>
-              <p>The analysis of transit assignment results
-                generally focus on comparing the number of transit
-                boardings estimated by the model to observed boardings.
-                The CMAP model transit network includes the following modes:
-
-                <ul>
-                  <li>Heavy Rail – operated by the Chicago Transit Authority (CTA)
-                    in Chicago and some surrounding communities.</li>
-                  <li>Commuter Rail – operated by Metra throughout
-                    the CMAP region.</li>
-                  <li>Bus – operated by CTA
-                    (in Chicago and some surrounding communities)
-                    and by Pace Suburban Bus (in northeastern Illinois,
-                    mostly outside of Chicago).</li>
-                </ul>
-              </p>
-              <br>
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-md-1"></div>
-              <!-- <div class="col-md-2"></div> end -->
-              <div class="col-md-8">
-                <div class="colborder"></div>
-                </div>
-                </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-              <div class="col-md-3">
-                <h3>Transit Boardings by Mode</h3>
-                <p class="small">
-                  Transit boardings include average weekday
-                  boardings for fixed-route service. Demand
-                  responsive dial-a-ride, call and ride,
-                  or ADA paratransit services are not included.
-                </p>
-              </div>
-              <div class="col-md-5">
-                <br />
-                <br />
-                <table id="railboardings"></table>
-              </div>
-              <div class="col col-md-2">
-                  <div class="container">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <img src="data/images/icons8-add-50.png" class="image">
-                    <div class="overlay">
-                      <p>
-                          The model does a good job predicting the average number of weekday boardings for each transit mode.
-                          The predicted number of average weekday boardings for heavy rail, buses, and the total are very close
-                          to the observed data (all within 4%). The model is slightly underpredicting the number of transit boardings
-                          for commuter rail, by about 7%.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
-            <div class="col-md-8">
-              <div class="colborder"></div>
-              </div>
-              </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <!-- <div class="col-md-2"></div> end -->
-              <div class="col-md-3">
-                <h3>Transit Boardings by Line</h3>
-                <section class="container" style="display: -webkit-box">
-                  <svg id="transitmaplegend" style="padding-top:10px"></svg>
-                  <div id="transitboardingLegend"></div>
-                </section>
-                <div id="transit_map"></div><br>
-                <button type="button" class="btn btn-default btn-xs" id="wrecenter" value="Re-center map" onClick="zoomTo(center,transit_map)">Recenter Map</button><br />
-                <img src="data/images/Cursor-Click-2-icon.png" width="20px">
-                <span class="small">Hover over bars to display values and highlight segment on map.
-                  Click on a transit segment on the map to show the name.</span>
-              </div>
-              <div class="col-md-5">
-                <div class="col-md-6" style="text-align:center">
-                  <br>
-                  <h4>CTA</h4>
-                  <div id="transitassignment"></div>
-                </div>
-                <!-- <div id="transitBoardingsBar_model"></div> -->
-                <div class="col-md-6" style="text-align:center">
-                  <br>
-                  <h4>Metra</h4>
-                  <!-- <div id="transitBoardingsBar_obs"></div> -->
-                  <div id="transitassignmentmetra"></div>
-                </div>
-                </div>
-                <div class="col col-md-2">
-                    <div class="container">
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <img src="data/images/icons8-add-50.png" class="image">
-                      <div class="overlay">
-                        <p>
-                            Overall, the model accurately estimates transit boardings by line for both CTA and Metra. The model
-                            overpredicts some of the transit boardings (such as the Green Line on the CTA and the BNSF line on Metra),
-                            while the model also underpredicts transit boardings on other lines (such as the Brown Line on the CTA and the
-                            MD-N line on Metra). However, for the most part, the model does a good job predicting the transit boardings on
-                            each CTA and Metra line.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-          </div>
-        </div>
-        <!-- Work FLow Validation -->
-        <div id="12" class="tab-pane container-fluid ">
+         <!-- Work FLow Validation -->
+         <div id="4" class="tab-pane container-fluid ">
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-6">
@@ -2200,6 +427,364 @@
               </div>
           </div>
         </div>
+        <!-- Highway Assignment -->
+        <div id="5" class="tab-pane container-fluid">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+              <h2>Highway Assignment</h2>
+              <p>
+                During Highway Assignment, the individual motor vehicle trips developed by the ABM are routed along the model transportation network from origin to destination in order to estimate traffic flows and network conditions.  As additional vehicles attempt to use the same roadway segments during the assignment, travel becomes more congested and travel times increase.  The assignment procedures implement a series of steps moving various portions of traffic onto alternative routes in an attempt to reduce congestion and minimize travel costs.  Equilibrium is reached within the highway assignment when vehicles cannot change paths without negatively impacting travel times.  Once equilibrium is reached, the volume of vehicles on each roadway segment is retained and can be used to calculate standard measures such as vehicle miles of travel (VMT).
+            </p>
+              <br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 colborder"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <h3>Daily VMT Shares by County</h3>
+            </div>
+            <div class="col-md-5">
+              <br>
+              <table id="vmt_county_tbl"></table>
+            </div>
+            <div class="col col-md-2">
+              <div class="container">
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src="data/images/icons8-add-50.png" class="image">
+                <div class="overlay">
+                  <p>
+                    In general, the model underestimates the total VMT for the 7-county region (160 million VMT vs. 167 million VMT). However, the VMT shares by county are very similar between the modeled and observed data. Counties with less VMT – like Kendall and McHenry – have very similar modeled vs. observed VMT shares, while Cook County accounts for 53.3% of modeled VMT and 50% of observed VMT.  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 colborder"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <h3>Daily VMT Shares by County and Facility Type</h3>
+              <br />
+              <div id="vmtfacilityLegendNew"></div>
+              <br />
+            </div>
+            <div class="col-md-5">
+              <center>
+                <div id="cfstack"></div>
+              </center>
+            </div>
+            <div class="col col-md-2">
+              <div class="container">
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src="data/images/icons8-add-50.png" class="image">
+                <div class="overlay">
+                  <p>
+                    The model does a good job of predicting the VMT shares by facility type for a few areas, including Suburban Cook and DuPage Counties.  The share of modeled vs observed VMT on local roads is almost identical for these two areas.  In Lake County, the model is overestimating the amount of VMT on interstates and underestimating the VMT on arterial streets.  In Chicago, the model is slightly underestimating the VMT on arterial streets.  In general, the share of modeled and observed VMT on arterials is lower in the City of Chicago, Suburban Cook County, DuPage County and Will County. 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 colborder"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <h3>Modeled vs. Observed Average Daily Link Volumes</h3>
+              <br>
+              <div id="scatterLegend"></div>
+              <p><b>r<sup>2</sup></b> = <text_div id="r2"></text_div>
+              </p>
+            </div>
+            <div class="col-md-5">
+              <div id="scatter_vmt"></div>
+            </div>
+            <div class="col col-md-2 ">
+                <div class="container">
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <img src="data/images/icons8-add-50.png" class="img-fluid image">
+                  <div class="overlay">
+                    <p>
+                      The scatterplot shows a strong correlation between the observed average daily link volume
+                      and the modeled daily link volume, which is verified with an r-squared value of 0.86. A value
+                      of 0.86 means that the regression line shown is a good fit of the observed data and accounts
+                      for 86% of the variation in the data.
+                      The correlation between the observed and modeled average daily link volumes is stronger for
+                      interstates than for arterials/collectors.
+                    </p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 colborder"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <h3>Daily VMT By Interstate</h3>
+              <p class=small>This comparison examines vehicles separated into two categories: auto
+                (which includes cars, SUVs, pickup trucks, etc. that people drive for their
+                personal use) and commercial vehicles (which include package delivery trucks
+                all of the way up to tractor-trailers) used to conduct business activities.</p>
+
+                <p class=small>
+                  Truck volumes on I-190 not shown due to bar scale. Model and observed values equals 11,512 and 9,917 respectively.
+                </p>
+              <div id="hwyvmtLegend"></div>
+              <div id="interstate_map"></div><br>
+              <br>
+              <button type="button" class="btn btn-default btn-xs" id="wrecenter" value="Re-center map" onClick="zoomTo(center,interstate_map)">Recenter Map</button><br />
+              <img src="data/images/Cursor-Click-2-icon.png" width="12px">
+              <span class="small">Hover over bars to display values and highlight segment on map. Click on a highway segment on the map to show the name.</span>
+            </div>
+            <div class="col-md-5">
+            <div class="col-md-6" style="text-align:center">
+              <br>
+              <br>
+              <h4>Auto</h4>
+              <div id="autohwyassignment"></div>
+            </div>
+            <div class="col-md-6" style="text-align:center">
+              <br>
+              <br>
+              <h4>Truck</h4>
+              <div id="truckhwyassignment"></div>
+            </div>
+            </div>
+            <div class="col col-md-2 ">
+                <div class="container">
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <img src="data/images/icons8-add-50.png" class="img-fluid image">
+                  <div class="overlay">
+                    <p>
+                      The model over predicts the amount of weekday traffic on the interstate system. Separating the VMT into auto and commercial vehicle components shows that truck tollway freeway volumes are over estimated in the compared to the observed data. Overall, modeled auto volumes show a closer relationship to the observed data for both freeways and tollways.
+                    </p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 colborder"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <h3>Daily VMT by Volume Range</h3>
+              <br />
+            </div>
+            <div class="col-md-5">
+                <br />
+                <br />
+                <table id="vrange_consolidated"></table>
+            </div>
+            <div class="col col-md-2 ">
+                <div class="container">
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <img src="data/images/icons8-add-50.png" class="img-fluid image">
+                  <div class="overlay">
+                    <p>
+                        This analysis compares modeled volumes to links that have observed traffic
+                        counts on them.  Overall the model is overestimating traffic on these links
+                        by less than 2%, an extremely close margin.  VMT on the lowest volume roads
+                        are being overestimated, while VMT is underestimated by the model on the highest
+                        volume road segments.  For the five categories from 5,000 up to 59,999 the model
+                        is overestimating VMT by less than 9%, and for two categories the VMT difference
+                        is less than 2%.
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 colborder"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <h3>Root Mean Squared Error Analysis</h3>
+              <br />
+              <p class="small"> Links were grouped into volume bins based on the observed traffic counts (AADT) and linear regression analyses
+                were completed for each group. The root mean squared error (RMSE) is a measure commonly-used for model validation
+                analyses and compares the average difference between the observed values and the modeled volume predicted by the
+                linear regression. The percent RMSE standardizes the value by dividing it by the average of the AADT. </p>
+
+                <p class="small">
+                  Target values represent the standard maximum acceptable root mean squared error from the Florida Department of Transportation, which are often cited as model validation goals.
+                </p>
+            </div>
+            <div class="col-md-5">
+              <br />
+              <table id="rmse_7"></table>
+            </div>
+            <div class="col col-md-2 ">
+              <div class="container">
+                <br />
+                <br />
+                <br />
+                <br /><br />
+                <img src="data/images/icons8-add-50.png" class="img-fluid image">
+                <div class="overlay">
+                  <p>
+                      For the lowest volume categories, which contain about 87% of the links measured, the percent RMSE is below the
+                      Florida target value.  There is a spike in the 15,000-19,999 category, where the percent RMSE is 8 percentage
+                      points higher than the target value.  The higher volume categories also exceed the target value but by smaller
+                      amounts.  Overall this analysis shows that the ABM is dong a reasonable job of replicating the observed traffic
+                      counts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- TRANSIT ASSIGNMENT -->
+        <div id="6" class="tab-pane container-fluid">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+              <h2>Transit Assignment</h2>
+              <p>The analysis of transit assignment results
+                generally focus on comparing the number of transit
+                boardings estimated by the model to observed boardings.
+                The CMAP model transit network includes the following modes:
+
+                <ul>
+                  <li>Heavy Rail – operated by the Chicago Transit Authority (CTA)
+                    in Chicago and some surrounding communities.</li>
+                  <li>Commuter Rail – operated by Metra throughout
+                    the CMAP region.</li>
+                  <li>Bus – operated by CTA
+                    (in Chicago and some surrounding communities)
+                    and by Pace Suburban Bus (in northeastern Illinois,
+                    mostly outside of Chicago).</li>
+                </ul>
+              </p>
+              <br>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <div class="colborder"></div>
+                </div>
+                </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+              <div class="col-md-3">
+                <h3>Transit Boardings by Mode</h3>
+                <p class="small">
+                  Transit boardings include average weekday
+                  boardings for fixed-route service. Demand
+                  responsive dial-a-ride, call and ride,
+                  or ADA paratransit services are not included.
+                </p>
+              </div>
+              <div class="col-md-5">
+                <br />
+                <br />
+                <table id="railboardings"></table>
+              </div>
+              <div class="col col-md-2">
+                  <div class="container">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <img src="data/images/icons8-add-50.png" class="image">
+                    <div class="overlay">
+                      <p>
+                          The model does a good job predicting the average number of weekday boardings for each transit mode.
+                          The predicted number of average weekday boardings for heavy rail, buses, and the total are very close
+                          to the observed data (all within 4%). The model is slightly underpredicting the number of transit boardings
+                          for commuter rail, by about 7%.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8">
+              <div class="colborder"></div>
+              </div>
+              </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+              <div class="col-md-3">
+                <h3>Transit Boardings by Line</h3>
+                <section class="container" style="display: -webkit-box">
+                  <svg id="transitmaplegend" style="padding-top:10px"></svg>
+                  <div id="transitboardingLegend"></div>
+                </section>
+                <div id="transit_map"></div><br>
+                <button type="button" class="btn btn-default btn-xs" id="wrecenter" value="Re-center map" onClick="zoomTo(center,transit_map)">Recenter Map</button><br />
+                <img src="data/images/Cursor-Click-2-icon.png" width="20px">
+                <span class="small">Hover over bars to display values and highlight segment on map.
+                  Click on a transit segment on the map to show the name.</span>
+              </div>
+              <div class="col-md-5">
+                <div class="col-md-6" style="text-align:center">
+                  <br>
+                  <h4>CTA</h4>
+                  <div id="transitassignment"></div>
+                </div>
+                <div class="col-md-6" style="text-align:center">
+                  <br>
+                  <h4>Metra</h4>
+                  <div id="transitassignmentmetra"></div>
+                </div>
+                </div>
+                <div class="col col-md-2">
+                    <div class="container">
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <img src="data/images/icons8-add-50.png" class="image">
+                      <div class="overlay">
+                        <p>
+                            Overall, the model accurately estimates transit boardings by line for both CTA and Metra. The model
+                            overpredicts some of the transit boardings (such as the Green Line on the CTA and the BNSF line on Metra),
+                            while the model also underpredicts transit boardings on other lines (such as the Brown Line on the CTA and the
+                            MD-N line on Metra). However, for the most part, the model does a good job predicting the transit boardings on
+                            each CTA and Metra line.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+        </div>
+       
       </div>
 
 
@@ -2215,36 +800,21 @@
                     text = ""
                   }
                   if (target == '#2') {
-                    text = 'Observed: PUMS 2007-11 <br> Modeled: PopSynIII'
+                    text = ''
                   }
                   if (target == '#3') {
                     text = 'Observed: PUMS 2007-11 <br> Modeled: PopSynIII'
                   }
-                  if (target == '#10') {
-                    text = 'Observed: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario.'
-                  }
-                  if (target == '#5') {
-                    text = 'Observed: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario.<br> The sum of observed trips may vary between charts since survey respondents did not provide information for all questions. '
-                  }
-                  if (target == '#6') {
-                    text = 'Observed: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario. <br> The sum of observed trips may vary between charts since survey respondents did not provide information for all questions. '
-                  }
-                  if (target == '#4') {
-                    text = 'Observed: Tables: CTPP (2009-2013), Graphs: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario.'
-                  }
-                  if (target == '#7') {
-                    text = 'Observed: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario. <br> The sum of observed trips may vary between charts since survey respondents did not provide information for all questions. '
-                  }
-                  if (target == '#11') {
+                  if (target == '#3') {
                     text = 'Observed: U.S. Census Bureau; American Community Survey (ACS); Five-Year Public Use Microdata Sample (PUMS) 2013-2017 <br> Modeled: CMAP ABM - 2015 Scenario.'
                   }
-                  if (target == '#12') {
+                  if (target == '#4') {
                     text = 'Observed: CTPP (2012 - 2016). <br> Modeled: CMAP ABM - 2015 Scenario.'
                   }
-                  if (target == '#8') {
+                  if (target == '#5') {
                     text = 'Observed: Rows 1-2: Illinois Travel Statistics 2015, Rows 3-6: Annual Average Daily Traffic Count Data 2015 <br> Modeled: CMAP ABM - 2015 Scenario.'
                   }
-                  if (target == '#9') {
+                  if (target == '#6') {
                     text = 'Observed: Regional Transportation Authority Mapping and Statistics (RTAMS, 2015-2016) <br> Modeled: CMAP ABM - 2015 Scenario.'
                   }
                   var textObj = document.getElementsByClassName("navbar-text navbar-left")[0]
@@ -2254,8 +824,7 @@
             </p>
           </div>
           <div class="navbar-text navbar-right"> 
-            <a href="https://datahub.cmap.illinois.gov/dataset/activity-based-model-calibration-and-validation-data" target="_blank" style="color:white; margin-right:10px">Data Workbook</a>
-            <a style="margin-right:10px !important" href="https://github.com/CMAP-REPOS/cmap_abm_report" target="_blank">
+            <a style="margin-right:10px !important" href="https://github.com/CMAP-REPOS/trip-based-model-validation" target="_blank">
             <img src="data/images/GitHub-Mark-Light-32px.png">
             </a>
           </div>
