@@ -17,8 +17,6 @@
   </link>
   <link rel="stylesheet" href="css/mapstyle.css">
   </link>
-  <link rel="stylesheet" href="css/intromapstyle.css">
-  </link>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="">
   </link>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -172,7 +170,7 @@
               <svg id="modelegend" style="height:300px"></svg>
               <br />
               <div class="small">
-                See more about transit in the <a href="#7" role="tab" data-toggle="tab">Transit</a> tab. <br>
+                See more about transit in the <a href="#4" role="tab" data-toggle="tab">Transit</a> tab. <br>
                   <img src="data/images/Cursor-Click-2-icon.png" width="20px">
                   <span>Hover over bars to compare trips by mode.</span>
                 <br><br>
@@ -290,10 +288,7 @@
               </select>
 
               <div id="tripspurposemodeLegend"></div>
-              <br><br>
-              <div class="small">
-                See more about trip purpose in the <a href="#6" role="tab" data-toggle="tab">Trip Activities</a> tab.
-              </div><br>
+              
             </div>
             <div class="col col-md-6">
               <!-- <div class="colborder"></div>end -->
@@ -735,7 +730,7 @@
             <div class="col-md-2">
               <h3>Modeled vs. Observed Journey to Work Flows</h3>
               <p class="small">
-                The scatterplot includes a point for each home/work county pair in the modeling area.  Only a portion of Lee, Ogle, and LaSalle counties are included in the model data (refer to map in <a href="#1" role="tab" data-toggle="tab">Introduction</a>).  A modeling area county map is shown below, with the standard CMAP region shaded for reference.
+                The scatterplot includes a point for each home/work county pair in the modeling area.  Only a portion of Lee, Ogle, and LaSalle counties are included in the model data (refer to map in <a href="#1" role="tab" data-toggle="tab">Introduction</a>).  
                 <br><br><dfn
                   data-info="R-squared is calculated to determine the peformance of the model predicability. It is used to compare the regionwide observed and modeled journey to work trips between ring sectors. A value closer to 1.0 indicates a better model."><b>r<sup>2</sup></b></dfn>
                 = <text_div id="jtwr2"></text_div>
@@ -1259,11 +1254,9 @@
 <script src="scripts/barchart_stack2.js" type="text/javascript"></script>
 <script src="scripts/h_stacked.js" type="text/javascript"></script>
 <script src="scripts/modepurposefilter.js" type="text/javascript"></script>
-<script src="scripts/lollipop_dual.js" type="text/javascript"></script>
 <script type="text/javascript" src='scripts/table.js'></script>
 <script type="text/javascript" src="scripts/modepies.js"></script>
 <script type="text/javascript" src="scripts/multiline.js"></script>
-<script type="text/javascript" src="scripts/multiline_dd.js"></script>
 <!-- calling functions -->
 <script>
   makeGroupVBar("data/csv5_mode_purpose.csv", "#ModeByPurpose", "#catModePurp", 2, "modePurpDesc", "modeTitle", "", "tripspurposemode_p");
@@ -1327,9 +1320,6 @@
 </script>
 <script>
   make_multi_line("rmse_line", "data/rmse.csv")
-</script>
-<script>
-  make_multi_line_dd("data/csv37_tours_todv3.csv", "tod_line", "#todcat", "tourtod_legend")
 </script>
 
 <script type="text/javascript" src="data/json/Combined_WGS_Updated.js"></script>
@@ -1402,15 +1392,6 @@
     tabulate(data, ['Mode', 'Observed', 'Model', 'Diff', 'Percent Diff'], "#railboardings", "percent"); // 2 column table
   });
 
-
-  d3.csv("data/aoCounts_tbl.csv", function(d, i, columns) {
-    for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
-    return d;
-  }, function(error, data) {
-    if (error) throw error;
-    tabulate(data, ['# Vehicles', 'Model', 'Observed'], "#auto_counts", "nopercent"); // 2 column table
-  });
-
   d3.csv("data/csv29_vmt_county_table.csv", function(d, i, columns) {
     for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
     return d;
@@ -1467,19 +1448,6 @@
     tabulate(data, ['Origin', '1', '2', '3', '4', 'External', 'Total'], "#commute_model", "nopercent");
   });
 
-  d3.csv("data/aoCounts.csv", function(d, i, columns) {
-    for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
-    return d;
-  }, function(error, data) {
-    if (error) throw error;
-    BarChart(data, "#aoCountBar", "")
-    $('.modtotal').text(d3.formatPrefix(".2s", 1e6)(d3.sum(data.map(function(d) {
-      return d.Model
-    }))))
-    $('.surveytotal').text(d3.formatPrefix(".2s", 1e6)(d3.sum(data.map(function(d) {
-      return d.Observed
-    }))))
-  });
 </script>
 
 <script>

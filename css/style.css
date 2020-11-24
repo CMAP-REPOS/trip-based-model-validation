@@ -24,6 +24,7 @@ div.tab-content {
   transform: translate(-50%, -50%);
   width: 12%;
 }
+
 /* The overlay effect - lays on top of the container and over the image */
 .overlay {
   z-index: 99;
@@ -49,11 +50,6 @@ div.tab-content {
 
 .container:hover .image {
   opacity: 0;
-}
-
-table#commute_model{
-  table-layout:auto;
-  font:5px
 }
 
 .navbar-inverse {
@@ -181,57 +177,6 @@ h3 {
   font-weight: bold;
 }
 
-#accordion .panel{
-  border: none;
-  box-shadow: none;
-  margin-bottom: 5px;
-}
-
-#accordion .panel-heading{
-    padding: 0;
-    border: none;
-    background: transparent;
-}
-
-#accordion .panel-title a{
-    display: block;
-    padding: 14px 50px 14px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background: rgb(28, 78, 128);
-    position: relative;
-    border-bottom: none;
-    border-radius: 20px 20px 0 0;
-}
-
-#accordion .panel-title a.collapsed{
-    border-radius: 20px;
-}
-
-#accordion .panel-title a:before,
-#accordion .panel-title a.collapsed:before{
-    content: "\f106";
-    font-family: fontawesome;
-    font-size: 20px;
-    position: absolute;
-    top: 12px;
-    right: 30px;
-}
-
-#accordion .panel-title a.collapsed:before{
-    content: "\f107";
-}
-
-#accordion .panel-body{
-    font-size: 14px;
-    color: #555;
-    line-height: 25px;
-    padding: 20px 25px;
-    position: relative;
-    border: none;
-}
-
 #header .row {
   position: relative;
   display: flex;
@@ -244,44 +189,12 @@ h3 {
   margin-left: 10px !important;
 }
 
-#accordionintro .panel{
-  border: none;
-  box-shadow: none;
-  margin-bottom: 5px;
-}
-
-#abouttoggle a:after,
-#abouttoggle a.collapsed:after{
-    content: "\f106";
-    font-family: fontawesome;
-    font-size: 20px;
-    position: relative;
-    padding-left:5px;
-}
-
-#abouttoggle a.collapsed:after{
-  content: "\f107";
-}
-
 .axis { font: 14px sans-serif; }
-
 
 .colborder {
   border-top: 1px solid grey;
 }
 
-#wflowmap, #transitodmap,#commutemap{
-    width: 100%;
-    height: 300px;
-    margin-left: 0px;
-    margin-right: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 1px 3px grey
-}
-
-#commutemap .leaflet-pane {
-  z-index:0
-}
 
 div.vmttooltip {
   position: absolute;
@@ -328,7 +241,6 @@ div.vmttooltip2 {
     border-radius: 5px;
     box-shadow: 0px 1px 3px grey
 }
-
 
 #main {
   width: 960px;
