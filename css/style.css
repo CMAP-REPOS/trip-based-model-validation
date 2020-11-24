@@ -12,6 +12,7 @@
 
 div.tab-content {
   margin-top:120px !important;
+  min-height:calc(100vh - 184px);
 }
 
 .image {
@@ -68,20 +69,6 @@ line#limit {
 text.divergence {
   font-size: 14px;
 }
-
-/* .axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-
-path {
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-} */
 
 #PopPersonType {
   width: 100%;
