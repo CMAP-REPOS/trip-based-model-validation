@@ -28,7 +28,7 @@ var baselayer1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x
     zoomOffset: -1
 })
 
-$("a[href='#11']").on('shown.bs.tab',function(e) {
+$("a[href='#5']").on('shown.bs.tab',function(e) {
     map1.invalidateSize();
 });
 

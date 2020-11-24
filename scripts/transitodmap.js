@@ -14,7 +14,7 @@ function zoomTo(location, map) {
 	}
 
 // display correctly on tab load
-$("a[href='#7']").on('shown.bs.tab',function(e) {
+$("a[href='#4']").on('shown.bs.tab',function(e) {
     transitmap.invalidateSize();
 });
 

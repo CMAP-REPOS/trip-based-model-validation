@@ -154,9 +154,6 @@
             <div class="col-md-1"></div>
             <div class="col-md-7">
               <h2>Trips by Mode</h2>
-              <p>
-                The CT-RAMP model includes eleven options for travel modes. These include the non-motorized options of walking or cycling, as well as transit, taxis and school bus. There are six options for auto trips, which are categorized by the number of vehicle occupants and whether or not the trip includes a toll. Vehicle occupancy categories include single occupants, two people sharing a vehicle, or more than two people sharing a vehicle.
-              </p>
               <br>
             </div>
           </div>
@@ -186,27 +183,6 @@
               <div id="stackedmode"></div>
             </div>
 
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    While the model tends to overestimate walk trips,
-                    all other modes match observed trips fairly well. The model maintains relative shares among mode categories.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="col col-md-4" align = "center">
-            <div class="colborder"></div>
-            <h5><b>Modeled Mode Share</b></h5>
-            <p style="font-size:small;">CMAP ABM - 2010 Scenario</p>
-            <div id="pieMode2"></div>
-          </div> -->
           </div>
 
           <div class="row">
@@ -246,23 +222,6 @@
 
               <div id="ModebyPerson"></div>
             </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    Modeled trip modes for non-student person types are close to observed trips modes. Though student trips are not reflected as accurately,
-                    they make up a small fraction
-                    of all trips. In many cases, modeled student trips are closer to the
-                    observed trips, in terms of number of trips, than other person types.
-                  </p>
-                </div>
-              </div>
-            </div>
 
           </div>
 
@@ -297,21 +256,6 @@
             <div class="col col-md-6">
 
               <div id="ModebyIncome"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model overestimates lower income trips and underestimates higher income trips, but middle income trips compare well to the observed trips. For all household income categories, the mode trends are in agreement with the
-                    observed data.
-                  </p>
-                </div>
-              </div>
             </div>
 
           </div>
@@ -355,21 +299,6 @@
               <!-- <div class="colborder"></div>end -->
 
               <div id="ModeByPurpose"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    Aside from a few, less impactful outliers such as transit and taxi trips for university activities, the model produces generally reasonable results for each trip purpose. The mode distributions of work and shop trips – the most
-                    common trip purposes and nearly half of all trips – have strong correlations to the observed trips.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -438,20 +367,6 @@
               <br />
               <table id="caldiffcountyflow"> </table>
             </div>
-            <div class="col col-md-2">
-              <div class="container">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <img src="data/images/icons8-add-50.png" class="image">
-                  <div class="overlay">
-                    <p>
-                      The model does a good job of replicating the number of commute trips being made within and between the counties in the CMAP region.  For instance, the model matches the Census data in showing that the top three work locations in northeastern Illinois are Cook, DuPage and Lake counties, in that order.  Both the modeled and observed data show that close to 45% of the total work trips made in the extended modeling area occur entirely within Cook County.  The model is underestimating the number of Cook and DuPage residents that live in one county and work in the other.  It is also underestimating the number of Cook residents that work in Lake and Will counties.
-                    </p>
-                  </div>
-                </div>
-          </div>
           </div>
           <div class="row">
             <div class="col-md-1"></div>
@@ -587,19 +502,6 @@
             <div class="col col-md-6">
               <div id="ModeByDistance"></div>
             </div>
-            <div class="col col-md-2">
-                <div class="container">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <img src="data/images/icons8-add-50.png" class="image">
-                  <div class="overlay">
-                    <p>
-                      Driving is the most frequently used mode for traveling to work in the region and the model does a reasonable job replicating the number of people driving different distances to work.  Nearly two-thirds of the commute trips in the region are people driving alone on trips that do not involve paying a toll and the modeled trips match the distance pattern for this group well, somewhat overestimating the extremely short trips (under 2.5 miles) and underestimating the trips longer than 30 miles.  A similar pattern is seen in the transit trips – the longer trips are underrepresented in the model and the shorter trips are overrepresented. </p>
-                  </div>
-                </div>
-              </div>
           </div>
           <div class="row">
             <div class="col-md-1"></div>
@@ -646,20 +548,6 @@
             <div class="col-md-6">
               <div id="scatter_transit"></div>
             </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The graph shows a strong correlation between the modeled and survey data.  The coefficient of determination (0.905) indicates the regression line is a good fit and accounts for more than 90% of the variation between the data sets.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="row">
@@ -686,24 +574,6 @@
             </div>
             <div class="col col-md-6">
               <div id="TranDist"></div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model overestimates the number of shorter transit trips (less than 10 miles) and underestimates the number of longer transit trips (greater than 15 miles). The greatest discrepancies are for very short trips (less than 2.5
-                    miles) and very long trips (30 miles or more).
-                  </p>
-                  <p>
-                    For transit trips by income, the model generally matches the observed data. However, the model significantly overestimates the number of transit trips made by persons in the $35k to $50k income range.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
           <div class="row">
@@ -735,19 +605,6 @@
               <p style="font-size:small;">Travel Tracker Survey, 2007-2008</p>
               <div id="pieTransitSurveyMode"></div>
             </div>
-            </div>
-            <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    A slightly higher percentage of modeled transit trips (89.9%) are accessed by walking than observed transit trips (88.4%).   </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -884,25 +741,12 @@
                 = <text_div id="jtwr2"></text_div>
               </p>
               <br>
-              <div id="commutemap"></div><br>
-              <button type="button" class="btn btn-default btn-xs" id="introrecenter" value="Re-center map" onClick="zoomTo(center,commutemap)">Recenter Map</button>
+              
             </div>
             <div class="col-md-6">
               <div id="scatter_jtw"></div>
             </div>
             <div class="col col-md-2 ">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="img-fluid image">
-                <div class="overlay">
-                  <p>
-                    The graph shows an extremely strong relationship between the data sets, which is verified by the value of 0.998. This coefficient of determination indicates that the regression line is a nearly perfect fit with the observed data and accounts for more than 99% of the variation in the data.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
           <br>
@@ -1346,21 +1190,24 @@
                     text = ""
                   }
                   if (target == '#2') {
-                    text = ''
+                    text = 'Observed: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario.<br> The sum of observed trips may vary between charts since survey respondents did not provide information for all questions. '
                   }
                   if (target == '#3') {
-                    text = 'Observed: PUMS 2007-11 <br> Modeled: PopSynIII'
-                  }
-                  if (target == '#3') {
-                    text = 'Observed: U.S. Census Bureau; American Community Survey (ACS); Five-Year Public Use Microdata Sample (PUMS) 2013-2017 <br> Modeled: CMAP ABM - 2015 Scenario.'
+                    text = 'Observed: Tables: CTPP (2009-2013), Graphs: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario.'
                   }
                   if (target == '#4') {
-                    text = 'Observed: CTPP (2012 - 2016). <br> Modeled: CMAP ABM - 2015 Scenario.'
+                    text = 'Observed: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario.<br> The sum of observed trips may vary between charts since survey respondents did not provide information for all questions. '
                   }
                   if (target == '#5') {
-                    text = 'Observed: Rows 1-2: Illinois Travel Statistics 2015, Rows 3-6: Annual Average Daily Traffic Count Data 2015 <br> Modeled: CMAP ABM - 2015 Scenario.'
+                    text = 'Observed: U.S. Census Bureau; American Community Survey (ACS); Five-Year Public Use Microdata Sample (PUMS) 2013-2017 <br> Modeled: CMAP ABM - 2015 Scenario.'
                   }
                   if (target == '#6') {
+                    text = 'Observed: CTPP (2012 - 2016). <br> Modeled: CMAP ABM - 2015 Scenario.'
+                  }
+                  if (target == '#7') {
+                    text = 'Observed: Rows 1-2: Illinois Travel Statistics 2015, Rows 3-6: Annual Average Daily Traffic Count Data 2015 <br> Modeled: CMAP ABM - 2015 Scenario.'
+                  }
+                  if (target == '#8') {
                     text = 'Observed: Regional Transportation Authority Mapping and Statistics (RTAMS, 2015-2016) <br> Modeled: CMAP ABM - 2015 Scenario.'
                   }
                   var textObj = document.getElementsByClassName("navbar-text navbar-left")[0]
@@ -1417,11 +1264,7 @@
 <script type="text/javascript" src="scripts/modepies.js"></script>
 <script type="text/javascript" src="scripts/multiline.js"></script>
 <script type="text/javascript" src="scripts/multiline_dd.js"></script>
-<script type="text/javascript" src="scripts/alert_dismiss.js"></script>
 <!-- calling functions -->
-<script>
-  makeGroupVBar("data/csv1_pop_syn.csv", "#PurposeChartpums", "#catPopSyn", 2, "popsynDesc", "hhtitle", "pumsLegend");
-</script>
 <script>
   makeGroupVBar("data/csv5_mode_purpose.csv", "#ModeByPurpose", "#catModePurp", 2, "modePurpDesc", "modeTitle", "", "tripspurposemode_p");
 </script>
@@ -1435,16 +1278,7 @@
   makeGroupVBar("data/csv10_mode_income.csv", "#ModebyIncome", "#catModeInc", 2, "modeinDesc", "modeITitle", "", "tripsincomemode_p");
 </script>
 <script>
-  makeGroupVBar("data/csv11_purpose_type.csv", "#PurposebyType", "#catPurpType", 2, "purpTypeDesc", "purpTypeTitle", "", "tripspersonpurpose_p");
-</script>
-<script>
-  makeGroupVBar("data/csv12b_purpose_distance.csv", "#DistbyPurpose", "#catDistPurp", 2, "DistpurpDesc", "DistpurpTitle", "", "tripspurposedistance_p");
-</script>
-<script>
   makeGroupVBar("data/csv19_transit_distance.csv", "#TranDist", "#catTranDist", 2, "TranDistDesc", "TranDistTitle", "", "transitmodedistance_p");
-</script>
-<script>
-  makeGroupVBar("data/csv22_dap.csv", "#dap", "#catdap", 2, "dapDesc", "dapTitle", "", portionID = "dap_p");
 </script>
 <script>
   makeGroupHBar("data/csv34.csv", "#transitassignment", 2, "vmtDesc", "vmtTitle", 600, 'boardings', 1e5, 0);
@@ -1466,12 +1300,6 @@
 </script>
 <script>
   makeStackedChart_nodd2("data/csv33_tour_purposetype.csv", "cftitle", "tourstack");
-</script>
-<script>
-  makeStackedChart_4("data/csv3_aocrosstab_counts.csv", "#aoCat", "dtitle", "stackedbar", "stackedAutoLegend");
-</script>
-<script>
-  makeStackedChart_4("data/csv40_PopSyn_CrossTab.csv", "#popsyn_ct", "popcttitle", "popsyncrosstab", "stackedAdultLegend");;
 </script>
 <script>
   makeChords('data/csv4_chord.csv', "modelChord", "obsChord");
@@ -1509,7 +1337,6 @@
 <script type="text/javascript" src="scripts/hhvalidationmap.js"></script>
 <script type="text/javascript" src="scripts/intromap.js"></script>
 <script type="text/javascript" src="scripts/transitodmap.js"></script>
-<script type="text/javascript" src="scripts/commutemap.js"></script>
 <script type="text/javascript" src="scripts/transit_assignment_map.js"></script>
 <script type="text/javascript" src="scripts/highway_assignment_map.js"></script>
 
@@ -1653,6 +1480,16 @@
       return d.Observed
     }))))
   });
+</script>
+
+<script>
+$('a[data-toggle="tab').on('shown.bs.tab', function(e){
+
+window.scrollTo(0,0);
+if (window.scrollY > 0) {
+  window.scrollTo(0,0);
+};
+  })
 </script>
 
 </html>

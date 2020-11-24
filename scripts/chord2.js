@@ -27,7 +27,7 @@ var baselayer1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x
     zoomOffset: -1
 })
 
-$("a[href='#4']").on('shown.bs.tab',function(e) {
+$("a[href='#3']").on('shown.bs.tab',function(e) {
     wflowmap.invalidateSize();
 });
 wflowmap.addLayer(baselayer1);

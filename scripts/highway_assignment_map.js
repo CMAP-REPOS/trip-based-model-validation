@@ -25,7 +25,7 @@
     zoomOffset: -1
 })
 
-  $("a[href='#8']").on('shown.bs.tab',function(e) {
+  $("a[href='#7']").on('shown.bs.tab',function(e) {
       interstate_map.invalidateSize();
   });
     interstate_map.addLayer(baselayer2);

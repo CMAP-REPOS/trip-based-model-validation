@@ -14,7 +14,7 @@ function zoomTo(location, map) {
 	}
 
 // display correctly on tab load
-$("a[href='#12']").on('shown.bs.tab',function(e) {
+$("a[href='#3']").on('shown.bs.tab',function(e) {
     commutemap.invalidateSize();
 });
 

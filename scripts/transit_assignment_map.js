@@ -21,7 +21,7 @@ var baselayer3 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x
     zoomOffset: -1
 })
 
-$("a[href='#9']").on('shown.bs.tab',function(e) {
+$("a[href='#8']").on('shown.bs.tab',function(e) {
     transit_map.invalidateSize();
 });
 transit_map.addLayer(baselayer3);
