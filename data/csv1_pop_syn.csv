@@ -1,22 +1,22 @@
 Index,Model,Observed,Category,Description,Title
-1 Person HH,991960,1062464,size,Number of Households by size,Size
-2 Person HH,1008873,1153713,size,Number of Households by size,Size
-3 Person HH,837313,599919,size,Number of Households by size,Size
-4 Person HH,659707,547628,size,Number of Households by size,Size
-5+ Person HH,347528,454568,size,Number of Households by size,Size
-0 Vehicles,456430,431792,veh,Number of Households by vehicles in household,Vehicles
-1 Vehicle,1473030,1346716,veh,Number of Households by vehicles in household,Vehicles
-2 Vehicles,1366928,1403079,veh,Number of Households by vehicles in household,Vehicles
-3 Vehicles,405741,457783,veh,Number of Households by vehicles in household,Vehicles
-4+ Vehicles,143252,178924,veh,Number of Households by vehicles in household,Vehicles
-0-35k,1617735,1513141,income,Number of Households by household income,Income
-35k-65k,1204100,1060577,income,Number of Households by household income,Income
-65k-100k,559467,670714,income,Number of Households by household income,Income
-100k+,464079,573862,income,Number of Households by household income,Income
-0 Workers,862369,859222,workers,Number of Households by workers in household,Workers
-1 Worker,1631918,1529389,workers,Number of Households by workers in household,Workers
-2 Workers,976021,1141786,workers,Number of Households by workers in household,Workers
-3+ Workers,375073,287897,workers,Number of Households by workers in household,Workers
-16-34,1001178,783582,age,Number of Households by age of householder,Age
-35-64,2209084,2262014,age,Number of Households by age of householder,Age
-65 and older,634954,744752,age,Number of Households by age of householder,Age
+1 Person HH,1077691,1130573,size,Number of Households by size,Size
+2 Person HH,1202145,1251362,size,Number of Households by size,Size
+3 Person HH,613957,608419,size,Number of Households by size,Size
+4 Person HH,554662,537562,size,Number of Households by size,Size
+5+ Person HH,462912,421182,size,Number of Households by size,Size
+0 Vehicles,441832,451195,veh,Number of Households by vehicles in household,Vehicles
+1 Vehicle,1334778,1382736,veh,Number of Households by vehicles in household,Vehicles
+2 Vehicles,1417110,1427334,veh,Number of Households by vehicles in household,Vehicles
+3 Vehicles,501058,485140,veh,Number of Households by vehicles in household,Vehicles
+4+ Vehicles,216589,202693,veh,Number of Households by vehicles in household,Vehicles
+0-30k,855586,887307,income,Number of Households by household income,Income
+30k-60k,885793,903453,income,Number of Households by household income,Income
+60k-100k,868227,881393,income,Number of Households by household income,Income
+100k+,1301761,1276945,income,Number of Households by household income,Income
+0 Workers,910019,953536,workers,Number of Households by workers in household,Workers
+1 Worker,1482185,1525356,workers,Number of Households by workers in household,Workers
+2 Workers,1177601,1159967,workers,Number of Households by workers in household,Workers
+3+ Workers,341562,310239,workers,Number of Households by workers in household,Workers
+under 35,733872,739044,age,Number of Households by age of householder,Age
+35-64,2260875,2283020,age,Number of Households by age of householder,Age
+65 and older,916620,927034,age,Number of Households by age of householder,Age

@@ -3,7 +3,7 @@ function makeGroupVBar(csv_file,chartID,catID, nogroups,dataDescription,dtitle, 
   var divText = document.getElementById(dataDescription);
   var divTitle = document.getElementById(dtitle);
   var ngroups= nogroups+1
-  var formatValue = d3.format(".2s");
+  var formatValue = d3.format(".3s");
   var maxvalue = 0;
   var bartotal = 0;
   var margin = {top: 35, right: 45, bottom: 120, left: 45},
