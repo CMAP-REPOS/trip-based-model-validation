@@ -167,21 +167,6 @@
               <div id="HouseholdSize" width="100%"></div><!-- end -->
             </div> <!-- end -->
             <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    In terms of the percentage of total households, the model slightly underrepresents
-                    one-person households in the region. The model also underrepresents the number of two-person households.
-                    However, three and four-person households
-                    are considerably overrepresented in the model. The largest disparity between modeled and observed
-                    households in terms of percentage is for large households (5+ people). </p>
-                </div>
-              </div>
             </div>
           </div> <!-- end row-->
 
@@ -205,7 +190,6 @@
                 <option value="workers">Household Workers</option>
                 <option value="income">Household Income</option>
                 <option value="size">Household Size</option>
-                <option value="veh">Vehicles in Household</option>
               </select><!-- end -->
               <br><br>
               <div id="pumsLegend"></div>
@@ -221,20 +205,6 @@
               <div id="PurposeChartpums"></div><!-- end -->
             </div><!-- end -->
             <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model does a reasonably well job of representing the various household characteristics.
-                    For instance, the number of 0-worker households is almost identical in the modeled and observed data,
-                    and the number of vehicles by household are very similar for modeled and observed households.
-                    The model slightly overestimates the number of lower income households and underestimates the number of high income households. </p>
-                </div>
-              </div>
             </div>
           </div> <!-- end -->
           <br>
@@ -265,21 +235,6 @@
               <div id="popsyncrosstab"></div>
             </div>
             <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    There is a discrepancy in the number of workers in households with one adult,
-                    and the model overestimates the total number of households with three adults.
-                    Similarly, when examining households by the number of children, the model overestimates
-                    the number of households with two adults and one child and underestimates the number of
-                    households with two children, regardless of the number of adults in the household.</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -309,25 +264,24 @@
             <div class="col-md-1"></div>
             <div class="col-md-2">
               <h3>Number of Households by Vehicles Owned</h3>
-              Total Households: <span class="modtotal"></span> Model, <span class="surveytotal"></span> Survey
-              <div id="autoLegend"></div>
+              Total Households: <span class="modtotal"></span> Model, <span class="surveytotal"></span> Observed
+                <h5>Households by <span id="vehtitle"></span>
+                </h5>
+                <select id="catveh">
+                  <option value="veh">Vehicles in Household</option>
+                  <option value="veh2">Vehicles in HH (sub-model)</option>
+                </select><!-- end -->
+                <br><br>
+                <div id="autoLegend"></div>
+                <p class="small">
+                   Income is in 2019 dollars.
+  
+                </p>
             </div>
             <div class="col-md-6">
-              <br>
-              <svg id="aoCountBar" width="700" height="375" preserveAspectRatio="xMidYMid meet"></svg>
+              <div id="aochart"></div><!-- end -->
             </div>
             <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                    The model does a good job predicting the number of vehicles owned by households. It is just slightly under-estimating the number of households with zero or 1 vehicle, and is just slightly over-estimating that number of households that own at least 2 vehicles. </p>
-                </div>
-              </div>
             </div>
           </div>
           <div class="row">
@@ -344,7 +298,7 @@
               <!-- <h3>Auto Sufficiency</h3> -->
               <h3>Distribution of Vehicle Ownership by <div id="dtitle"></div>
               </h3>
-              Total Households: <span class="modtotal"></span> Model, <span class="surveytotal"></span> Survey
+              Total Households: <span class="modtotal"></span> Model, <span class="surveytotal"></span> Observed
               <br><br>
               <select id="aoCat">
                 <option value="size">Household Size</option>
@@ -354,9 +308,8 @@
               <br>
               <div id="stackedAutoLegend"></div>
               <br>
-              <br>
               <p class="small">
-                Income is in 1999 dollars.
+                Income is in 2019 dollars.
 
              </p>
             </div>
@@ -364,17 +317,6 @@
               <div id="stackedbar"></div>
             </div>
             <div class="col col-md-2">
-              <div class="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <img src="data/images/icons8-add-50.png" class="image">
-                <div class="overlay">
-                  <p>
-                      The model accurately predicts the distribution of vehicle ownership by household size, household income, and household workers. However, the model tends to under-estimate the number of households with at least 3 vehicles for larger households and high income households. It is also over-estimating the number of zero-worker households that own at least 2 vehicles. </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1596,6 +1538,9 @@
   makeGroupVBar("data/csv1_pop_syn.csv", "#PurposeChartpums", "#catPopSyn", 2, "popsynDesc", "hhtitle", "pumsLegend");
 </script>
 <script>
+  makeGroupVBar("data/aoCounts.csv", "#aochart", "#catveh", 2, "popsynDesc", "vehtitle", "pumsLegend");
+</script>
+<script>
   makeGroupVBar("data/csv5_mode_purpose.csv", "#ModeByPurpose", "#catModePurp", 2, "modePurpDesc", "modeTitle", "", "tripspurposemode_p");
 </script>
 <script>
@@ -1630,6 +1575,12 @@
 </script>
 <script>
   makeStackedChart_nodd2("data/csv33_tour_purposetype.csv", "cftitle", "tourstack");
+</script>
+<script>
+  makeStackedChart_4("data/csv40_PopSyn_CrossTab.csv", "#popsyn_ct", "popcttitle", "popsyncrosstab", "stackedAdultLegend");
+</script>
+<script>
+  makeStackedChart_4("data/csv3_aocrosstab_counts.csv", "#aoCat", "dtitle", "stackedbar", "stackedAutoLegend");
 </script>
 <script>
   makeChords('data/csv4_chord.csv', "modelChord", "obsChord");
@@ -1783,6 +1734,19 @@
   }, function(error, data) {
     if (error) throw error;
     tabulate(data, ['Origin', '1', '2', '3', '4', 'External', 'Total'], "#commute_model", "nopercent");
+  });
+
+  d3.csv("data/aoCounts.csv", function(d, i, columns) {
+    for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
+    return d;
+  }, function(error, data) {
+    if (error) throw error;
+    $('.modtotal').text(d3.formatPrefix(".2s", 1e6)(d3.sum(data.map(function(d) {
+      return d.Model / 2
+    }))))
+    $('.surveytotal').text(d3.formatPrefix(".2s", 1e6)(d3.sum(data.map(function(d) {
+      return d.Observed / 2
+    }))))
   });
 
 </script>

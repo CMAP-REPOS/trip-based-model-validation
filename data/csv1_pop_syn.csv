@@ -4,11 +4,6 @@ Index,Model,Observed,Category,Description,Title
 3 Person HH,613957,608419,size,Number of Households by size,Size
 4 Person HH,554662,537562,size,Number of Households by size,Size
 5+ Person HH,462912,421182,size,Number of Households by size,Size
-0 Vehicles,441832,451195,veh,Number of Households by vehicles in household,Vehicles
-1 Vehicle,1334778,1382736,veh,Number of Households by vehicles in household,Vehicles
-2 Vehicles,1417110,1427334,veh,Number of Households by vehicles in household,Vehicles
-3 Vehicles,501058,485140,veh,Number of Households by vehicles in household,Vehicles
-4+ Vehicles,216589,202693,veh,Number of Households by vehicles in household,Vehicles
 0-30k,855586,887307,income,Number of Households by household income,Income
 30k-60k,885793,903453,income,Number of Households by household income,Income
 60k-100k,868227,881393,income,Number of Households by household income,Income

@@ -1,0 +1,10 @@
+Index,Model,Observed,Category,Description,Title
+0 Vehicles,441832,451195,veh,Number of Households by vehicles in household,Vehicles
+1 Vehicle,1334778,1382736,veh,Number of Households by vehicles in household,Vehicles
+2 Vehicles,1417110,1427334,veh,Number of Households by vehicles in household,Vehicles
+3 Vehicles,501058,485140,veh,Number of Households by vehicles in household,Vehicles
+4+ Vehicles,216589,202693,veh,Number of Households by vehicles in household,Vehicles
+0 Vehicles,433780,451195,veh2,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,1373719,1382736,veh2,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,1453477,1427334,veh2,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,650391,687833,veh2,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
