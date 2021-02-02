@@ -1,9 +1,4 @@
 // basic map
-var workertext = 'The model only slightly overestimates zero and 1-worker households.  However, 2-worker households are underestimated both in portions of Cook County as well as outlying areas in Lake, McHenry, Kane and Kendall Counties.'
-var hhsizetext = 'Single person households are underestimated in many of the lower income areas of the region, especially the south side of Chicago, the suburbs of South Cook and along the Fox River Valley.  However, households with four or more members are well estimated regionwide.'
-var incometext = 'Households earning <$35k annually are overestimated in the rural areas of Kane, Kendall, Grundy and most of Lake County, along with the near north and near west sides of Chicago and near north suburbs, while households in the highest category of >$100k are underestimated in some of the same areas. It may be because the model underestimates the number of two-worker households in many of these areas.  Households in the upper middle range of $65k-$100k are well estimated regionwide.  '
-var vehtext = 'In the west and northwest areas of Chicago and the western Cook suburbs, the model overestimates the number of households with no vehicles.  The number of households with no vehicles is accurate over the rest of the region. Outside Chicago, the number of one-vehicle households are overestimated and households with two or more vehicles are underestimated. This may be related to the underestimate of two-worker households in some of the same areas. '
-
 var mapboxAccessToken = 'pk.eyJ1Ijoic2FyYWhjbWFwIiwiYSI6ImNqc3VzMDl0YzJocm80OXBnZjc2MGk4cGgifQ.S_UmPA1jm5pQPrCCLDs41Q';
 var lat = 41.8781;
 var long = -87.8298;
@@ -28,8 +23,12 @@ var baselayer1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x
     zoomOffset: -1
 })
 
-$("a[href='#5']").on('shown.bs.tab',function(e) {
-    map1.invalidateSize();
+$('#hhcalmap').on('click', function(){
+    setTimeout(
+    function()
+    {
+        map1.invalidateSize()
+    },100)
 });
 
 map1.addLayer(baselayer1);
@@ -85,131 +84,283 @@ var overlays1 = {
 	};
   info1.update = function (props) {
 		this._div.innerHTML =  (props ?
-            '<table id="datatable"> <tr> <td style="width:105px">PUMA </td> <td>' + props.NAME_NEW + '</td> </tr> <tr> <td> Attribute </td> <td>' + whichone_name1 + '</td> </tr> <tr> <td>Difference</td> <td>'+ Math.round((100*props[whichone1]) * 100) / 100 + '<br> percentage points' + '</td> </tr> <tr> <td>Model Count</td> <td>' + props[model_count_var1] +'</td> </tr> <tr> <td>Census Count</td> <td>' + props[census_count_var1] + '</td> </tr></table>'
-			: 'Hover over a PUMA');
-	};
+            '<table id="datatable"> <tr> <td style="width:105px">PUMA </td> <td>' + props.NAME_NEW + '</td> </tr> <tr> <td> Attribute </td> <td>' + whichone_name + '</td> </tr> <tr> <td>Difference</td> <td>' + Math.round((100 * props[whichone1]) * 100) / 100 + '<br> percentage points' + '</td> </tr> <tr> <td>Model Count</td> <td>' + props[model_count_var] + '</td> </tr> <tr> <td>Observed Count</td> <td>' + props[census_count_var] + '</td> </tr></table>'
+            : 'Hover over a PUMA');
+    };
 
 	info1.addTo(map1);
 
 // settings for initial page load
-var whichone1 = 'difAU_0'
-var whichone_name1 = '0-vehicle households'
-var model_count_var1 = 'HHAU_0m'
-var census_count_var1 = 'HHAU_0p'
-d3.select("#overlaytext").text(vehtext);
+var whichone1 = 'difSZ_1'
+var whichone_name = '1-person households'
+var model_count_var = 'HHSZ_1m'
+var census_count_var = 'HHSZ_1p'
 var firsttime1 = true
-d3.select('#hhmaptitle').text('0-vehicle households')
+d3.select('#hhmaptitle').text('1-person households')
 drawmap1()
 
 
 // dropdown button events
 function updateview1(buttonarg) {
     d3.select('#hhmaptitle').text(buttonarg)
-
+    
     if (buttonarg == '1-person households') {
         whichone1 = 'difSZ_1'
-        model_count_var1 = 'HHSZ_1m'
-        census_count_var1 = 'HHSZ_1p'
-        whichone_name1 = '1-person households'
-        d3.select("#overlaytext").text(hhsizetext);
+        model_count_var = 'HHSZ_1m'
+        census_count_var = 'HHSZ_1p'
+        whichone_name = '1-person households';
     }
     else if (buttonarg == '2-person households') {
         whichone1 = 'difSZ_2'
-        model_count_var1 = 'HHSZ_2m'
-        census_count_var1 = 'HHSZ_2p'
-        whichone_name1 = '2-person households'
-        d3.select("#overlaytext").text(hhsizetext);
+        model_count_var = 'HHSZ_2m'
+        census_count_var = 'HHSZ_2p'
+        whichone_name = '2-person households';
     }
     else if (buttonarg == '3-person households') {
         whichone1 = 'difSZ_3'
-        model_count_var1 = 'HHSZ_3m'
-        census_count_var1 = 'HHSZ_3p'
-        whichone_name1 = '3-person households'
-        d3.select("#overlaytext").text(hhsizetext);
+        model_count_var = 'HHSZ_3m'
+        census_count_var = 'HHSZ_3p'
+        whichone_name = '3-person households';
     }
     else if (buttonarg == '4+ person households') {
         whichone1 = 'difSZ_4'
-        model_count_var1 = 'HHSZ_4m'
-        census_count_var1 = 'HHSZ_4p'
-        whichone_name1 = '4+ person households'
-        d3.select("#overlaytext").text(hhsizetext);
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'HHSZ_4p'
+        whichone_name = '4+ person households';
+    }
+    else if (buttonarg == '4-person households') {
+        whichone1 = 'ps4d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'SIZE4'
+        whichone_name = '4 person households';
+    }
+    else if (buttonarg == '5-person households') {
+        whichone1 = 'ps5d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'SIZE5'
+        whichone_name = '5 person households';
+    }
+    else if (buttonarg == '6-person households') {
+        whichone1 = 'ps6d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'SIZE6'
+        whichone_name = '6 person households';
+    }
+    else if (buttonarg == '7+-person households') {
+        whichone1 = 'ps7d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'SIZE7P'
+        whichone_name = '7+ person households';
+    }
+    else if (buttonarg == 'Adults') {
+        whichone1 = 'pad'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'ADLT'
+        whichone_name = 'Adults';
+    }
+    else if (buttonarg == 'Workers') {
+        whichone1 = 'pwd'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'WRKR'
+        whichone_name = 'Workers';
+    }
+    else if (buttonarg == 'Children') {
+        whichone1 = 'pkd'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'KID'
+        whichone_name = 'Children';
+    }
+    else if (buttonarg == 'White Non-Hispanic') {
+        whichone1 = 'pwhited'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'POPWHT'
+        whichone_name = 'White Non-Hispanic';
+    }
+    else if (buttonarg == 'Black Non-Hispanic') {
+        whichone1 = 'pblackd'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'POPBLK'
+        whichone_name = 'Black Non-Hispanic';
+    }
+    else if (buttonarg == 'Asian Non-Hispanic') {
+        whichone1 = 'pasiand'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'POPASN'
+        whichone_name = 'Asian Non-Hispanic';
+    }
+    else if (buttonarg == 'Other Non-Hispanic') {
+        whichone1 = 'potherd'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'POPOTH'
+        whichone_name = 'Other Non-Hispanic';
+    }
+    else if (buttonarg == 'Hispanic') {
+        whichone1 = 'phispd'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'POPHSP'
+        whichone_name = 'Hispanic';
+    }
+    else if (buttonarg == 'less than 35') {
+        whichone1 = 'ph35d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'HHRU35'
+        whichone_name = 'HH less than 35';
+    }
+    else if (buttonarg == '35-64') {
+        whichone1 = 'ph3564d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'HHR3564'
+        whichone_name = 'HH 35-64';
+    }
+    else if (buttonarg == 'greater than 64') {
+        whichone1 = 'ph65d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'HHRO64'
+        whichone_name = 'HH greater than 64';
+    }
+    else if (buttonarg == '1') {
+        whichone1 = 'pb1d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE1'
+        whichone_name = 'Mobile home or trailer';
+    }
+    else if (buttonarg == '2') {
+        whichone1 = 'pb2d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE2'
+        whichone_name = 'One-family detached';
+    }
+    else if (buttonarg == '3') {
+        whichone1 = 'pb3d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE3'
+        whichone_name = 'One-family attached';
+    }
+    else if (buttonarg == '4') {
+        whichone1 = 'pb4d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE4'
+        whichone_name = '2 Apartments';
+    }
+    else if (buttonarg == '5') {
+        whichone1 = 'pb5d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE5'
+        whichone_name = '3-4 Apartments';
+    }
+    else if (buttonarg == '6') {
+        whichone1 = 'pb6d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE6'
+        whichone_name = '5-9 Apartments';
+    }
+    else if (buttonarg == '7') {
+        whichone1 = 'pb7d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE7'
+        whichone_name = '10-19 Apartments';
+    }
+    else if (buttonarg == '8') {
+        whichone1 = 'pb8d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE8'
+        whichone_name = '20-49 Apartments';
+    }
+    else if (buttonarg == '9') {
+        whichone1 = 'pb9d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE9'
+        whichone_name = '50+ Apartments';
+    }
+    else if (buttonarg == '10') {
+        whichone1 = 'pb10d'
+        model_count_var = 'HHSZ_4m'
+        census_count_var = 'BTYPE10'
+        whichone_name = 'Boat, RV, van, etc.';
     }
     else if (buttonarg == 'Household income <35k') {
         whichone1 = 'difINC_1'
-        model_count_var1 = 'HHINC_1m'
-        census_count_var1 = 'HHINC_1p'
-        whichone_name1 = 'Household income <35k'
-        d3.select("#overlaytext").text(incometext);
+        model_count_var = 'HHINC_1m'
+        census_count_var = 'HHINC_1p'
+        whichone_name = 'Household income <35k';
     }
     else if (buttonarg == 'Household income 35k - 65k') {
         whichone1 = 'difINC_2'
-        model_count_var1 = 'HHINC_2m'
-        census_count_var1 = 'HHINC_2p'
-        whichone_name1 = 'Household income 35k - 65k'
-        d3.select("#overlaytext").text(incometext);
+        model_count_var = 'HHINC_2m'
+        census_count_var = 'HHINC_2p'
+        whichone_name = 'Household income 35k - 65k';
     }
     else if (buttonarg == 'Household income 65k - 100k') {
         whichone1 = 'difINC_3'
-        model_count_var1 = 'HHINC_3m'
-        census_count_var1 = 'HHINC_3p'
-        whichone_name1 = 'Household income 65k - 100k'
-        d3.select("#overlaytext").text(incometext);
+        model_count_var = 'HHINC_3m'
+        census_count_var = 'HHINC_3p'
+        whichone_name = 'Household income 65k - 100k';
+    }
+    else if (buttonarg == 'Household income <30k') {
+        whichone1 = 'difINC_1'
+        model_count_var = 'HHINC_1m'
+        census_count_var = 'HHINC_1p'
+        whichone_name = 'Household income <30k';
+    }
+    else if (buttonarg == 'Household income 30k - 60k') {
+        whichone1 = 'difINC_2'
+        model_count_var = 'HHINC_2m'
+        census_count_var = 'HHINC_2p'
+        whichone_name = 'Household income 30k - 60k';
+    }
+    else if (buttonarg == 'Household income 60k - 100k') {
+        whichone1 = 'difINC_3'
+        model_count_var = 'HHINC_3m'
+        census_count_var = 'HHINC_3p'
+        whichone_name = 'Household income 60k - 100k';
     }
     else if (buttonarg == 'Household income > 100k') {
         whichone1 = 'difINC_4'
-        model_count_var1 = 'HHINC_4m'
-        census_count_var1 = 'HHINC_4p'
-        whichone_name1 = 'Household income > 100k'
-        d3.select("#overlaytext").text(incometext);
+        model_count_var = 'HHINC_4m'
+        census_count_var = 'HHINC_4p'
+        whichone_name = 'Household income > 100k';
     }
     else if (buttonarg == '0-worker households') {
         whichone1 = 'difWK_0'
-        model_count_var1 = 'HHWK_0m'
-        census_count_var1 = 'HHWK_0p'
-        whichone_name1 = '0-worker households'
-        d3.select("#overlaytext").text(workertext);
+        model_count_var = 'HHWK_0m'
+        census_count_var = 'HHWK_0p'
+        whichone_name = '0-worker households';
     }
     else if (buttonarg == '1-worker households') {
         whichone1 = 'difWK_1'
-        model_count_var1 = 'HHWK_1m'
-        census_count_var1 = 'HHWK_1p'
-        whichone_name1 = '1-worker households'
-        d3.select("#overlaytext").text(workertext);
+        model_count_var = 'HHWK_1m'
+        census_count_var = 'HHWK_1p'
+        whichone_name = '1-worker households';
     }
     else if (buttonarg == '2-worker households') {
         whichone1 = 'difWK_2'
-        model_count_var1 = 'HHWK_2m'
-        census_count_var1 = 'HHWK_2p'
-        whichone_name1 = '2-worker households'
-        d3.select("#overlaytext").text(workertext);
+        model_count_var = 'HHWK_2m'
+        census_count_var = 'HHWK_2p'
+        whichone_name = '2-worker households';
     }
     else if (buttonarg == '3+ worker households') {
         whichone1 = 'difWK_3'
-        model_count_var1 = 'HHWK_3m'
-        census_count_var1 = 'HHWK_3p'
-        whichone_name1 = '3+ worker households'
-        d3.select("#overlaytext").text(workertext);
+        model_count_var = 'HHWK_3m'
+        census_count_var = 'HHWK_3p'
+        whichone_name = '3+ worker households';
     }
     else if (buttonarg == '0-vehicle households') {
         whichone1 = 'difAU_0'
-        model_count_var1 = 'HHAU_0m'
-        census_count_var1 = 'HHAU_0p'
-        whichone_name1 = '0-vehicle households'
-        d3.select("#overlaytext").text(vehtext);
+        model_count_var = 'HHAU_0m'
+        census_count_var = 'HHAU_0p'
+        whichone_name = '0-vehicle households';
     }
     else if (buttonarg == '1-vehicle households') {
         whichone1 = 'difAU_1'
-        model_count_var1 = 'HHAU_1m'
-        census_count_var1 = 'HHAU_1p'
-        whichone_name1 = '1-vehicle households'
-        d3.select("#overlaytext").text(vehtext);
+        model_count_var = 'HHAU_1m'
+        census_count_var = 'HHAU_1p'
+        whichone_name = '1-vehicle households';
     }
     else if (buttonarg == '2+ vehicle households') {
         whichone1 = 'difAU_2'
-        model_count_var1 = 'HHAU_2m'
-        census_count_var1 = 'HHAU_2p'
-        whichone_name1 = '2+ vehicle households'
-        d3.select("#overlaytext").text(vehtext);
+        model_count_var = 'HHAU_2m'
+        census_count_var = 'HHAU_2p'
+        whichone_name = '2+ vehicle households';
     }
     return whichone1,
     updatemap1();
@@ -232,7 +383,7 @@ function updatemap1() {
 
 
 function drawmap1() {
-  L.geoJson(chicagoMapNew, {style: style1, onEachFeature: onEachFeature1}).addTo(map1);
+  L.geoJson(run2020, {style: style1, onEachFeature: onEachFeature1}).addTo(map1);
   map1.addLayer(countiesmini)
 }
 

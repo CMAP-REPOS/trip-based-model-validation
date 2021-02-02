@@ -68,7 +68,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="calibration" href="#pop3" role="tab" data-toggle="tab">
+                    <a id="hhcalmap" class="calibration" href="#pop3" role="tab" data-toggle="tab">
                       Household Attributes
                     </a>
                   </li>
@@ -298,6 +298,7 @@
               <!-- <h3>Auto Sufficiency</h3> -->
               <h3>Distribution of Vehicle Ownership by <div id="dtitle"></div>
               </h3>
+              PopulationSim Model<br><br>
               Total Households: <span class="modtotal"></span> Model, <span class="surveytotal"></span> Observed
               <br><br>
               <select id="aoCat">
@@ -307,7 +308,6 @@
               </select>
               <br>
               <div id="stackedAutoLegend"></div>
-              <br>
               <p class="small">
                 Income is in 2019 dollars.
 
@@ -315,6 +315,41 @@
             </div>
             <div class="col col-md-6">
               <div id="stackedbar"></div>
+            </div>
+            <div class="col col-md-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <!-- <div class="col-md-2"></div> end -->
+            <div class="col-md-8">
+              <div class="colborder"></div>
+            </div>
+          </div>
+          <div class="row">
+            <br>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+              <!-- <h3>Auto Sufficiency</h3> -->
+              <h3>Distribution of Vehicle Ownership by <div id="dtitlesm"></div>
+              </h3>
+              Vehicle Availability Sub-Model<br><br>
+              Total Households: <span class="modtotal"></span> Model, <span class="surveytotal"></span> Observed
+              <br><br>
+              <select id="aoCatsm">
+                <option value="size">Household Size</option>
+                <option value="income">Household Income</option>
+                <option value="workers">Household Workers</option>
+              </select>
+              <br>
+              <div id="stackedAutoLegendsm"></div>
+              <p class="small">
+                Income is in 2019 dollars.
+
+             </p>
+            </div>
+            <div class="col col-md-6">
+              <div id="stackedbarsm"></div>
             </div>
             <div class="col col-md-2">
             </div>
@@ -340,7 +375,7 @@
                   <br><br>
                   <div class="row">
                     <div class="col-md-1"></div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <h3>Attribute: <span id="hhmaptitle">0-vehicle households</span></h3>
                       <br>
                       <p>
@@ -354,7 +389,7 @@
                       <br><br>
         
                     </div>
-                    <div class="col-md-6" style="width:40%" id="hhvalbuttons">
+                    <div class="col-md-6" id="hhvalbuttons">
                       <div class="btn-group" role="group">
                         <div class="btn-group" role="group">
                           <button type="button" id="hhval1" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -364,7 +399,10 @@
                             <li><a class="dropdown-item">1-person households</a></li>
                             <li><a class="dropdown-item">2-person households</a></li>
                             <li><a class="dropdown-item">3-person households</a></li>
-                            <li><a class="dropdown-item">4+ person households</a></li>
+                            <li><a class='dropdown-item'>4-person households</a></li>
+                            <li><a class='dropdown-item'>5-person households</a></li>
+                            <li><a class='dropdown-item'>6-person households</a></li>
+                            <li><a class='dropdown-item'>7+-person households</a></li>
                           </ul>
                         </div>
                       </div>
@@ -374,54 +412,67 @@
                             Household Income
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="hhval2">
-                            <li><a class="dropdown-item">Household income <35k</a> </li> 
-                            <li><a class="dropdown-item">Household income 35k - 65k</a></li>
-                            <li><a class="dropdown-item">Household income 65k - 100k</a></li>
-                            <li><a class="dropdown-item">Household income > 100k</a></li>
+                            <li><a class='dropdown-item'>Household income <30k</a></li>
+                            <li><a class='dropdown-item'>Household income 30k - 60k</a></li>
+                            <li><a class='dropdown-item'>Household income 60k - 100k</a></li>
+                            <li><a class='dropdown-item'>Household income > 100k</a></li>
                           </ul>
                         </div>
                       </div>
-                      <div class="btn-group" role="group">
-                        <div class="btn-group" role="group">
-                          <button type="button" id="hhval3" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Workers in Household
+                      <div class='btn-group' role='group'>
+                        <div class='btn-group' role='group'>
+                          <button type='button' id='hhval2' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                            Population
                           </button>
-                          <ul class="dropdown-menu" aria-labelledby="hhval3">
-                            <li><a class="dropdown-item">0-worker households</a></li>
-                            <li><a class="dropdown-item">1-worker households</a></li>
-                            <li><a class="dropdown-item">2-worker households</a></li>
-                            <li><a class="dropdown-item">3+ worker households</a></li>
+                          <ul class='dropdown-menu' aria-labelledby='hhval2'>
+                            <li><a class='dropdown-item'>Adults</a></li>
+                            <li><a class='dropdown-item'>Workers</a></li>
+                            <li><a class='dropdown-item'>Children</a></li>
+                            <li><a class='dropdown-item'>White Non-Hispanic</a></li>
+                            <li><a class='dropdown-item'>Black Non-Hispanic</a></li>
+                            <li><a class='dropdown-item'>Asian Non-Hispanic</a></li>
+                            <li><a class='dropdown-item'>Other Non-Hispanic</a></li>
+                            <li><a class='dropdown-item'>Hispanic</a></li>
                           </ul>
                         </div>
                       </div>
-                      <div class="btn-group" role="group">
-                        <div class="btn-group" role="group">
-                          <button type="button" id="hhval4" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Household Vehicles
+                      <div class='btn-group' role='group'>
+                        <div class='btn-group' role='group'>
+                          <button type='button' id='hhval2' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                            Householder Age
                           </button>
-                          <ul class="dropdown-menu" aria-labelledby="hhval4">
-                            <li><a class="dropdown-item">0-vehicle households</a></li>
-                            <li><a class="dropdown-item">1-vehicle households</a>
-                            </li>
-                            <li><a class="dropdown-item">2+ vehicle households</a></li>
+                          <ul class='dropdown-menu' aria-labelledby='hhval2'>
+                            <li><a class='dropdown-item'>less than 35</a></li>
+                            <li><a class='dropdown-item'>35-64</a></li>
+                            <li><a class='dropdown-item'>greater than 64</a></li>
                           </ul>
                         </div>
                       </div>
-                      <div id="hhvalidationmap"></div>
+                      <div class='btn-group' role='group'>
+                        <div class='btn-group' role='group'>
+                          <button type='button' id='hhval2' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                            Building Type
+                          </button>
+                          <ul class='dropdown-menu' aria-labelledby='hhval2'>
+                            <li><a class='dropdown-item'>1</a></li>
+                            <li><a class='dropdown-item'>2</a></li>
+                            <li><a class='dropdown-item'>3</a></li>
+                            <li><a class='dropdown-item'>4</a></li>
+                            <li><a class='dropdown-item'>5</a></li>
+                            <li><a class='dropdown-item'>6</a></li>
+                            <li><a class='dropdown-item'>7</a></li>
+                            <li><a class='dropdown-item'>8</a></li>
+                            <li><a class='dropdown-item'>9</a></li>
+                            <li><a class='dropdown-item'>10</a></li>
+                          </ul>
+                        </div>
                       <br />
                     </div>
-                    <div class="col col-md-2">
-                      <div class="container">
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <img src="data/images/icons8-add-50.png" class="image">
-                        <div class="overlay" id ="overlaytext"></div>
-                      </div>
-                    </div>
+                    <div id="hhvalidationmap"></div>
                   </div>
                   </div>
+                  </div>
+                  <br><br>
         <!-- Trip Mode -->
         <div id="2" class="tab-pane container-fluid">
           <div class="row">
@@ -1516,6 +1567,7 @@
 <script type="text/javascript" src="data/json/ctalines.js"></script>
 <script type="text/javascript" src="data/json/mhn.js"></script>
 <script type="text/javascript" src="data/json/cmaparea.js"></script>
+<script type="text/javascript" src="data/json/puma2020pctdiff.js"></script>
 
 <!-- chart etc scripts -->
 <script src="scripts/scatter_plot.js" type="text/javascript"></script>
@@ -1581,6 +1633,9 @@
 </script>
 <script>
   makeStackedChart_4("data/csv3_aocrosstab_counts.csv", "#aoCat", "dtitle", "stackedbar", "stackedAutoLegend");
+</script>
+<script>
+  makeStackedChart_4("data/csv3_aocrosstab_counts_submodel.csv", "#aoCatsm", "dtitlesm", "stackedbarsm", "stackedAutoLegendsm");
 </script>
 <script>
   makeChords('data/csv4_chord.csv', "modelChord", "obsChord");
@@ -1749,16 +1804,6 @@
     }))))
   });
 
-</script>
-
-<script>
-$('a[data-toggle="tab').on('shown.bs.tab', function(e){
-
-window.scrollTo(0,0);
-if (window.scrollY > 0) {
-  window.scrollTo(0,0);
-};
-  })
 </script>
 
 </html>

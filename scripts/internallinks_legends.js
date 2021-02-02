@@ -12,6 +12,9 @@ $(function() {
   $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
+    if (window.scrollY > 0) {
+      window.scrollTo(0,0);
+    };
     var hash = document.location.hash;
     $('li').removeClass();
     $('.nav-tabs a[href=\\' + hash + ']').parent().addClass('active');
