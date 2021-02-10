@@ -68,7 +68,7 @@
                     </a>
                   </li>
                   <li>
-                    <a id="hhcalmap" class="calibration" href="#pop3" role="tab" data-toggle="tab">
+                    <a class="hhcalmap" class="calibration" href="#pop3" role="tab" data-toggle="tab">
                       Household Attributes
                     </a>
                   </li>
@@ -122,27 +122,19 @@
               <h2>Population Synthesis</h2>
               <p>
                 Using Census data and other socioeconomic information, a complete set of households for the CMAP modeling area is developed. 
-                This dataset contains all of the relevant attributes about each household and for each individual living in those households, 
-                which is required to run the ABM. While this population is statistically representative of the Census data, the actual households 
-                and individuals are “synthetic” in that they do not represent identifiable people and an individual household in the Census data may 
+                This dataset contains all of the relevant attributes about each household and for each individual living in those households. 
+                While this population is statistically representative of the Census data, the actual households and individuals are “synthetic” 
+                in that they do not represent identifiable people and an individual household in the Census data may 
                 be replicated numerous times in order to generate a complete distribution of households in the modeling inputs.
               </p>
               <p>
-                The current population synthesis software used by CMAP is PopSynIII. The socioeconomic data developed from CMAP’s regional forecasting 
+                The current population synthesis software used by CMAP is PopulationSim. The socioeconomic data developed from CMAP’s regional forecasting 
                 and Local Area Allocation procedures provide the subzone-level control values for all <dfn
                   data-info="ON TO 2050 is the region's long-range comprehensive plan, adopted in October 2018">ON TO 2050</dfn>
-                model scenarios. CMAP has greatly enhanced the functionality of PopSyn to enforce these controls and generate a distribution of enumerated 
-                households that account for the distribution of adults, workers and children within the
-                agency’s
-                forecasting procedures.
+                model scenarios. You can see how well the synthetic population matches the controls at the PUMA level in the <a class="hhcalmap" href="#pop3" data-toggle="tab">Household Attributes</a> page.  
               </p>
 
-              Data note: The observed data used Public Use Microdata Areas (PUMAs).  PUMAs are statistical geographic areas defined by the U.S.
-              Census Bureau for the dissemination of Public Use Microdata Sample (PUMS) data.  Two of the PUMAs used to gather observed
-              data include counties outside the CMAP modeling area (Stephenson County in Illinois, and Jefferson County in Wisconsin).
-              Data for these PUMAs is weighted by the percentage of population or households – depending on the analysis – for counties
-              within the CMAP modeling area.  As a result, the total number of observed persons or households is not always identical for
-              each summary analysis.
+              Data note: Currently, observed counts include full PUMAs that are only partially within the modeling area, so the observed total count is slightly greater than the model count.
             </div><!-- end -->
           </div><!-- row end -->
           <br>
@@ -360,9 +352,9 @@
                   <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-6">
-                      <h2>Synthetic Household Validation</h2>
+                      <h2>Synthetic Household Results</h2>
                       <p>
-                        This map displays the difference between modeled and observed data for selected household attributes summarized by U.S. Census Public Use Microdata Areas (PUMAs).  PUMAs are geographic areas defined by the U.S. Census Bureau that contain a minimum of 100,000 people.
+                        This map displays the difference between modeled and observed data for controlled attributes in the population synthesis process summarized by U.S. Census Public Use Microdata Areas (PUMAs).  PUMAs are geographic areas defined by the U.S. Census Bureau that contain a minimum of 100,000 people.
                         </p>
                             </div>
                   </div>
@@ -376,14 +368,10 @@
                   <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-2">
-                        <h3>Attribute: <span id="hhmaptitle">0-vehicle households</span></h3>
+                        <h3>Attribute: <span id="hhmaptitle">1-person households</span></h3>
                       <br>
                       <p>
-                        Choose from household size, household income, number of workers, and number of vehicles in households by clicking the category button and selecting the specific household type from the dropdown. Hover over each PUMA to display the values for modeled and observed data.  </p>
-                      <p>
-                        <b>Example:</b> In the model, 22.7% of households in northeast Lake County are 1-person households. According to PUMS, 27.2% of households in northeast Lake County are 1-person households.
-                        This is a difference of -4.5 percentage points. </p>
-                      </p>
+                        Choose from household size, household income, population segment, householder age, or building type by clicking the category button and making a selection in the dropdown. Hover over each PUMA to display the values for modeled and observed data.  </p>
                       <button type="button" class="btn btn-default btn-xs" id="introrecenter" value="Re-center map" onClick="zoomTo(center,map1)" style="margin-left: 0px">Recenter Map</button>
         
                       <br><br>
@@ -454,16 +442,16 @@
                             Building Type
                           </button>
                           <ul class='dropdown-menu' aria-labelledby='hhval2'>
-                            <li><a class='dropdown-item'>1</a></li>
-                            <li><a class='dropdown-item'>2</a></li>
-                            <li><a class='dropdown-item'>3</a></li>
-                            <li><a class='dropdown-item'>4</a></li>
-                            <li><a class='dropdown-item'>5</a></li>
-                            <li><a class='dropdown-item'>6</a></li>
-                            <li><a class='dropdown-item'>7</a></li>
-                            <li><a class='dropdown-item'>8</a></li>
-                            <li><a class='dropdown-item'>9</a></li>
-                            <li><a class='dropdown-item'>10</a></li>
+                            <li><a class='dropdown-item'>Mobile home or trailer</a></li>
+                            <li><a class='dropdown-item'>One-family detached</a></li>
+                            <li><a class='dropdown-item'>One-family attached</a></li>
+                            <li><a class='dropdown-item'>2 Apartments</a></li>
+                            <li><a class='dropdown-item'>3-4 Apartments</a></li>
+                            <li><a class='dropdown-item'>5-9 Apartments</a></li>
+                            <li><a class='dropdown-item'>10-19 Apartments</a></li>
+                            <li><a class='dropdown-item'>20-49 Apartments</a></li>
+                            <li><a class='dropdown-item'>50+ Apartments</a></li>
+                            <li><a class='dropdown-item'>Boat, RV, van, etc.</a></li>
                           </ul>
                         </div>
                       <br />
@@ -1510,6 +1498,15 @@
                   var target = $(e.target).attr("href"); // activated tab
                   if (target == '#1') {
                     text = ""
+                  }
+                  if (target == '#pop1') {
+                    text = "Observed: PUMS (2014-2018). <br> Modeled: PopulationSim using PUMS (2014-2018) seed."
+                  }
+                  if (target == '#pop2') {
+                    text = "Observed: PUMS (2014-2018). <br> Modeled: PopulationSim using PUMS (2014-2018) seed, Vehicle Availability Sub-Model."
+                  }
+                  if (target == '#pop3') {
+                    text = "Observed: PopulationSim controls developed using 2014-2018 PUMS, 2014-2018 ACS, and 2019 Population Estimates Program data.  <br> Modeled: PopulationSim using PUMS (2014-2018) seed."
                   }
                   if (target == '#2') {
                     text = 'Observed: Travel Tracker Survey, 2007-2008. <br> Modeled: CMAP ABM - 2010 Scenario.<br> The sum of observed trips may vary between charts since survey respondents did not provide information for all questions. '

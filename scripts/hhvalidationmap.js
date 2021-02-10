@@ -23,7 +23,7 @@ var baselayer1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x
     zoomOffset: -1
 })
 
-$('#hhcalmap').on('click', function(){
+$('.hhcalmap').on('click', function(){
     setTimeout(
     function()
     {
@@ -84,7 +84,11 @@ var overlays1 = {
 	};
   info1.update = function (props) {
 		this._div.innerHTML =  (props ?
-            '<table id="datatable"> <tr> <td style="width:105px">PUMA </td> <td>' + props.NAME_NEW + '</td> </tr> <tr> <td> Attribute </td> <td>' + whichone_name + '</td> </tr> <tr> <td>Difference</td> <td>' + Math.round((100 * props[whichone1]) * 100) / 100 + '<br> percentage points' + '</td> </tr> <tr> <td>Model Count</td> <td>' + props[model_count_var] + '</td> </tr> <tr> <td>Observed Count</td> <td>' + props[census_count_var] + '</td> </tr></table>'
+            '<table id="datatable"> <tr> <td style="width:105px">PUMA </td> <td>' + props.NAME_NEW + 
+            '</td> </tr> <tr> <td> Attribute </td> <td>' + whichone_name + 
+            '</td> </tr> <tr> <td>Difference</td> <td>' + Math.round((100 * props[whichone1]) * 100) / 100 + '<br> percentage points' + 
+            '</td> </tr> <tr> <td>Model Count</td> <td>' + (props[whichone1] * props[census_count_var] + props[census_count_var]) + 
+            '</td> </tr> <tr> <td>Observed Count</td> <td>' + props[census_count_var] + '</td> </tr></table>'
             : 'Hover over a PUMA');
     };
 
@@ -121,12 +125,6 @@ function updateview1(buttonarg) {
         model_count_var = 'HHSZ_3m'
         census_count_var = 'HHSZ_3p'
         whichone_name = '3-person households';
-    }
-    else if (buttonarg == '4+ person households') {
-        whichone1 = 'difSZ_4'
-        model_count_var = 'HHSZ_4m'
-        census_count_var = 'HHSZ_4p'
-        whichone_name = '4+ person households';
     }
     else if (buttonarg == '4-person households') {
         whichone1 = 'ps4d'
@@ -218,83 +216,65 @@ function updateview1(buttonarg) {
         census_count_var = 'HHRO64'
         whichone_name = 'HH greater than 64';
     }
-    else if (buttonarg == '1') {
+    else if (buttonarg == 'Mobile home or trailer') {
         whichone1 = 'pb1d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE1'
         whichone_name = 'Mobile home or trailer';
     }
-    else if (buttonarg == '2') {
+    else if (buttonarg == 'One-family detached') {
         whichone1 = 'pb2d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE2'
         whichone_name = 'One-family detached';
     }
-    else if (buttonarg == '3') {
+    else if (buttonarg == 'One-family attached') {
         whichone1 = 'pb3d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE3'
         whichone_name = 'One-family attached';
     }
-    else if (buttonarg == '4') {
+    else if (buttonarg == '2 Apartments') {
         whichone1 = 'pb4d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE4'
         whichone_name = '2 Apartments';
     }
-    else if (buttonarg == '5') {
+    else if (buttonarg == '3-4 Apartments') {
         whichone1 = 'pb5d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE5'
         whichone_name = '3-4 Apartments';
     }
-    else if (buttonarg == '6') {
+    else if (buttonarg == '5-9 Apartments') {
         whichone1 = 'pb6d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE6'
         whichone_name = '5-9 Apartments';
     }
-    else if (buttonarg == '7') {
+    else if (buttonarg == '10-19 Apartments') {
         whichone1 = 'pb7d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE7'
         whichone_name = '10-19 Apartments';
     }
-    else if (buttonarg == '8') {
+    else if (buttonarg == '20-49 Apartments') {
         whichone1 = 'pb8d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE8'
         whichone_name = '20-49 Apartments';
     }
-    else if (buttonarg == '9') {
+    else if (buttonarg == '50+ Apartments') {
         whichone1 = 'pb9d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE9'
         whichone_name = '50+ Apartments';
     }
-    else if (buttonarg == '10') {
+    else if (buttonarg == 'Boat, RV, van, etc.') {
         whichone1 = 'pb10d'
         model_count_var = 'HHSZ_4m'
         census_count_var = 'BTYPE10'
         whichone_name = 'Boat, RV, van, etc.';
-    }
-    else if (buttonarg == 'Household income <35k') {
-        whichone1 = 'difINC_1'
-        model_count_var = 'HHINC_1m'
-        census_count_var = 'HHINC_1p'
-        whichone_name = 'Household income <35k';
-    }
-    else if (buttonarg == 'Household income 35k - 65k') {
-        whichone1 = 'difINC_2'
-        model_count_var = 'HHINC_2m'
-        census_count_var = 'HHINC_2p'
-        whichone_name = 'Household income 35k - 65k';
-    }
-    else if (buttonarg == 'Household income 65k - 100k') {
-        whichone1 = 'difINC_3'
-        model_count_var = 'HHINC_3m'
-        census_count_var = 'HHINC_3p'
-        whichone_name = 'Household income 65k - 100k';
     }
     else if (buttonarg == 'Household income <30k') {
         whichone1 = 'difINC_1'
@@ -319,48 +299,6 @@ function updateview1(buttonarg) {
         model_count_var = 'HHINC_4m'
         census_count_var = 'HHINC_4p'
         whichone_name = 'Household income > 100k';
-    }
-    else if (buttonarg == '0-worker households') {
-        whichone1 = 'difWK_0'
-        model_count_var = 'HHWK_0m'
-        census_count_var = 'HHWK_0p'
-        whichone_name = '0-worker households';
-    }
-    else if (buttonarg == '1-worker households') {
-        whichone1 = 'difWK_1'
-        model_count_var = 'HHWK_1m'
-        census_count_var = 'HHWK_1p'
-        whichone_name = '1-worker households';
-    }
-    else if (buttonarg == '2-worker households') {
-        whichone1 = 'difWK_2'
-        model_count_var = 'HHWK_2m'
-        census_count_var = 'HHWK_2p'
-        whichone_name = '2-worker households';
-    }
-    else if (buttonarg == '3+ worker households') {
-        whichone1 = 'difWK_3'
-        model_count_var = 'HHWK_3m'
-        census_count_var = 'HHWK_3p'
-        whichone_name = '3+ worker households';
-    }
-    else if (buttonarg == '0-vehicle households') {
-        whichone1 = 'difAU_0'
-        model_count_var = 'HHAU_0m'
-        census_count_var = 'HHAU_0p'
-        whichone_name = '0-vehicle households';
-    }
-    else if (buttonarg == '1-vehicle households') {
-        whichone1 = 'difAU_1'
-        model_count_var = 'HHAU_1m'
-        census_count_var = 'HHAU_1p'
-        whichone_name = '1-vehicle households';
-    }
-    else if (buttonarg == '2+ vehicle households') {
-        whichone1 = 'difAU_2'
-        model_count_var = 'HHAU_2m'
-        census_count_var = 'HHAU_2p'
-        whichone_name = '2+ vehicle households';
     }
     return whichone1,
     updatemap1();
@@ -388,12 +326,12 @@ function drawmap1() {
 }
 
 function getDiffColor1(d) {
-    return d > 15  ? '#1C4E80' :
-    d > 10  ? '#4A729A' :
-    d > 5  ?  '#8FA8C1':
-           d < -15  ? '#D00000' :
-           d < -10  ? '#DA3434' :
-           d < -5   ? '#EE9C9C' :
+    return d > 10  ? '#1C4E80' :
+    d > 5  ? '#4A729A' :
+    d > 2  ?  '#8FA8C1':
+           d < -10  ? '#D00000' :
+           d < -5  ? '#DA3434' :
+           d < -2   ? '#EE9C9C' :
            '#EBF0F5';
 }
 
@@ -445,7 +383,7 @@ function onEachFeature1(feature, layer) {
 var difflegend1 = L.control({position: 'bottomright'});
 difflegend1.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'difflegend1'),
-    grades = [-20,-15,-10,-5,5,10,15,20],
+    grades = [-20,-10,-5,-2,2,5,10,20],
     labels = [],
     from, to;
 
@@ -458,7 +396,7 @@ difflegend1.onAdd = function (map) {
       if (i == 0){
         from_str = ''
         middle = ''
-        to_str = '-15+'
+        to_str = '<-10'
       }
       if (i == 6){
         middle = ''
