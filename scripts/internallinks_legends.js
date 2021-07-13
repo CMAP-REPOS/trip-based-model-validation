@@ -91,6 +91,7 @@ function modelsurveylegend(divID) {
 };
 
 modelsurveylegend("#autoLegend")
+modelsurveylegend("#autoLegendval")
 modelsurveylegend("#tripspersonLegend")
 modelsurveylegend("#tripsbyincomeLegend")
 modelsurveylegend("#tripspurposemodeLegend")

@@ -16,7 +16,7 @@ function makeStackedChart_4(csv_file, catID, dataTitle, divID,legendID) {
   height2 = 400 - margin.top - margin.bottom;
 
   var durations = 0;
-  var xlabel = ["Model","Observed","Model","Observed","Model","Observed","Model","Observed","Model","Observed","Model","Observed","Model","Observed","Model","Observed"]
+  var xlabel = ["Mod","Obs","Mod","Obs","Mod","Obs","Mod","Obs","Mod","Obs","Mod","Obs","Mod","Obs","Mod","Obs"]
 
   let afterLoad = () => durations = 750;
   var g = d3.select("#" + divID).append("svg")
@@ -69,11 +69,19 @@ function makeStackedChart_4(csv_file, catID, dataTitle, divID,legendID) {
       }))
       .rangeRound([0, x0.bandwidth()])
       .padding(0.2);
+    
+
+    var xlabelmax = d3.max(newdata,function(d){
+        return +d.xlabel})
+
+    if (xlabelmax > 10){
+      rangemin = 20
+    } else {
+      rangemin = 40
+    };
 
     var x2 = d3.scaleLinear()
-        .domain([0,d3.max(newdata,function(d){
-          return +d.xlabel
-        })]).range([40,width-30]);
+        .domain([0,xlabelmax]).range([rangemin,width-20]);
 
     z.domain(newdata.map(function(d) {
       return d.StackGroup;
@@ -266,11 +274,18 @@ function makeStackedChart_4(csv_file, catID, dataTitle, divID,legendID) {
         }))
         .rangeRound([0, x0.bandwidth()])
         .padding(0.2);
+      
+      var xlabelmax = d3.max(newdata,function(d){
+          return +d.xlabel})
 
+      if (xlabelmax > 10){
+        rangemin = 20
+      } else {
+        rangemin = 40
+      };
+      
       var x2 = d3.scaleLinear()
-          .domain([0,d3.max(newdata,function(d){
-            return +d.xlabel
-          })]).range([40,width-30]);
+          .domain([0,xlabelmax]).range([rangemin,width-20]);
 
       z.domain(newdata.map(function(d) {
         return d.StackGroup;
