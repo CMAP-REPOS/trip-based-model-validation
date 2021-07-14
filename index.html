@@ -1919,10 +1919,10 @@
   }, function(error, data) {
     if (error) throw error;
     $('.modtotalval').text(d3.formatPrefix(".2s", 1e6)(d3.sum(data.map(function(d) {
-      return d.Model / 2
+      return d.Model - 1
     }))))
     $('.surveytotalval').text(d3.formatPrefix(".2s", 1e6)(d3.sum(data.map(function(d) {
-      return d.Observed / 2
+      return d.Observed - 1
     }))))
   });
 
