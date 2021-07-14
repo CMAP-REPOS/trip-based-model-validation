@@ -4,6 +4,8 @@ function makeGroupVBar(csv_file,chartID,catID, nogroups,dataDescription,dtitle, 
   var divTitle = document.getElementById(dtitle);
   var ngroups= nogroups+1
   var formatValue = d3.format(".3s");
+  var formatpercent = d3.format(".1%");
+  var formatchoice = formatValue;
   var maxvalue = 0;
   var bartotal = 0;
   var margin = {top: 35, right: 45, bottom: 120, left: 45},
@@ -218,7 +220,15 @@ function makeGroupVBar(csv_file,chartID,catID, nogroups,dataDescription,dtitle, 
       .append("text")
         .attr("fill","black")
         .attr("font-size",13)
-        .merge(textOnBar);
+        .merge(textOnBar);    
+              
+      if (catID == '#catvehval'){
+          if (catInt != "region"){
+            formatchoice = formatpercent;
+          } else {
+            formatchoice = formatValue;
+          }
+        }
 
       textOnBar.transition().duration(durations)
         .attr("transform", function(d, i) {
@@ -226,7 +236,7 @@ function makeGroupVBar(csv_file,chartID,catID, nogroups,dataDescription,dtitle, 
               y0 = y(d.value) - 10;
           return "translate(" + x0 + "," + y0 + ") rotate(0)";
         })
-        .text(function(d) {return formatValue(d.value)})
+        .text(function(d) {return formatchoice(d.value)})
 
     } 
 
