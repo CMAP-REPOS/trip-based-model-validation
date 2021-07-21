@@ -1,53 +1,53 @@
-Index,Model,Observed,Category,Description,Title,,,,,,,
-0 Vehicles,416603,414050,region,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,1243076,1268948,region,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,1285254,1297629,region,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,556797,640942,region,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.099,0.097,cook,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.231,0.235,cook,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.174,0.170,cook,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.062,0.067,cook,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.001,0.002,dekalb,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.003,0.004,dekalb,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.004,0.004,dekalb,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.003,0.003,dekalb,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.005,0.002,dupage,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.030,0.027,dupage,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.044,0.048,dupage,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.019,0.023,dupage,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.000,0.000,grundy,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.002,0.000,grundy,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.003,0.001,grundy,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.002,0.002,grundy,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.003,0.002,kane,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.014,0.013,kane,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.023,0.022,kane,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.012,0.016,kane,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.000,0.000,kendall,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.003,0.004,kendall,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.006,0.010,kendall,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.003,0.005,kendall,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.003,0.004,lake (IL),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.019,0.019,lake (IL),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.032,0.035,lake (IL),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.017,0.019,lake (IL),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.001,0.000,mchenry,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.008,0.006,mchenry,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.015,0.007,mchenry,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.008,0.006,mchenry,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.003,0.001,will,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.017,0.015,will,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.031,0.029,will,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.015,0.021,will,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.002,0.005,lake (IN),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.019,0.017,lake (IN),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.022,0.019,lake (IN),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.011,0.010,lake (IN),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.001,0.000,laporte,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.004,0.003,laporte,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.005,0.004,laporte,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.003,0.003,laporte,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-0 Vehicles,0.001,0.001,porter,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-1 Vehicle,0.005,0.007,porter,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-2 Vehicles,0.008,0.007,porter,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
-3+ Vehicles,0.005,0.005,porter,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model),,,,,,,
+Index,Model,Observed,Category,Description,Title
+0 Vehicles,416603,414050,region,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,1243076,1268948,region,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,1285254,1297629,region,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,556797,640942,region,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.099239804,0.097064007,cook,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.230562608,0.234759851,cook,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.174008847,0.170463134,cook,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.062170984,0.067006317,cook,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.000528881,0.001904147,dekalb,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.003380044,0.004153725,dekalb,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.004263321,0.004435647,dekalb,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.002641551,0.002579545,dekalb,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.005035797,0.00220098,dupage,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.030440097,0.026734269,dupage,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.044160458,0.048251462,dupage,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.019027167,0.022983409,dupage,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.000128222,0,grundy,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.001575793,0.000305669,grundy,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.002533034,0.00147229,grundy,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.001505542,0.001524753,grundy,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.003131024,0.00171307,kane,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.014374609,0.013435337,kane,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.023269641,0.021578493,kane,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.011610261,0.015673593,kane,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.000370674,0.000157114,kendall,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.002575013,0.003644553,kendall,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.005861389,0.010456241,kendall,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.003167863,0.004717016,kendall,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.002859158,0.003784548,lake (IL),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.018912081,0.018777497,lake (IL),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.032142398,0.034848984,lake (IL),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.016703744,0.01880649,lake (IL),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.00124567,3.8105E-05,mchenry,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.008028317,0.006130216,mchenry,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.014729005,0.007472176,mchenry,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.008299326,0.005715479,mchenry,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.002854303,0.00133837,will,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.016962187,0.015283983,will,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.031221425,0.029437793,will,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.015488915,0.020713122,will,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.002413664,0.004935706,lake (IN),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.018595094,0.017217123,lake (IN),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.021583332,0.018667323,lake (IN),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.011209602,0.009602744,lake (IN),Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.00051546,0.000460022,laporte,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.004105685,0.002931878,laporte,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.005154024,0.004051835,laporte,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.002559592,0.002503611,laporte,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+0 Vehicles,0.000647965,0.000732555,porter,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+1 Vehicle,0.005477578,0.007012154,porter,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+2 Vehicles,0.008107136,0.007170649,porter,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)
+3+ Vehicles,0.004621716,0.005152739,porter,Number of Households by vehicles in household (vehicles available module),Vehicles (logit sub-model)

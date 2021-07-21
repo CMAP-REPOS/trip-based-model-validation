@@ -4,7 +4,7 @@ function makeGroupVBar(csv_file,chartID,catID, nogroups,dataDescription,dtitle, 
   var divTitle = document.getElementById(dtitle);
   var ngroups= nogroups+1
   var formatValue = d3.format(".3s");
-  var formatpercent = d3.format(".1%");
+  var formatpercent = d3.format(".2%");
   var formatchoice = formatValue;
   var maxvalue = 0;
   var bartotal = 0;
@@ -128,7 +128,11 @@ function makeGroupVBar(csv_file,chartID,catID, nogroups,dataDescription,dtitle, 
         //console.log(d)
         return d3.max(copy, function(key) {
           //console.log(d[key])
-          return +d[key];
+          // prevent y-axis max going below 3%
+          if (+d[key] >= 0.03) {
+            return +d[key]} else {
+              return 0.03
+            }
           });
         })
       ]).nice();
